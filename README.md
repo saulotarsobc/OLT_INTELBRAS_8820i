@@ -1,4 +1,4 @@
-# OLT_INTELBRAS_8820i
+# OLT GPON INTELBRAS 8820i
 
 ## ⏳ me contruçao... ⚡
 
