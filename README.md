@@ -1,6 +1,6 @@
 # OLT GPON INTELBRAS 8820i
 
-## ⏳ em contruçao... ⚡
+## ⏳ Em contruçao... ⚡
 
 ![image](https://user-images.githubusercontent.com/23584038/127940755-d5691f16-95eb-464d-89b5-604860610a87.png)
 
@@ -28,7 +28,13 @@
 
 ## ZABBIX - TEMPLATE
 
-> Contador de ONU's ativas por PON
+> Item discovery de ONU's. Busca a se as ONU's estão autorizadas e qual é a PON.
+
+```js
+discovery[{#REG},1.3.6.1.4.1.26138.1.2.1.1.1.4, {#PON},1.3.6.1.4.1.26138.1.2.1.1.1.2]
+```
+
+> Contador de ONU's ativas por PON.
 
 ```js
 $.[?(@.PON == '1' && @.REG == '1')].length()
