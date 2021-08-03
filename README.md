@@ -33,6 +33,9 @@
 ```js
 discovery[{#REG},1.3.6.1.4.1.26138.1.2.1.1.1.4, {#PON},1.3.6.1.4.1.26138.1.2.1.1.1.2]
 ```
+> Pré-processamento
+
+![image](https://user-images.githubusercontent.com/23584038/128008078-2a86115e-44ba-4e8f-8213-b50a2963d803.png)
 
 > Contador de ONU's ativas por PON.
 
