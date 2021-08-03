@@ -19,7 +19,7 @@
     "gnetId": null,
     "graphTooltip": 0,
     "id": 31,
-    "iteration": 1627951209760,
+    "iteration": 1627996975168,
     "links": [],
     "panels": [{
             "datasource": null,
@@ -182,8 +182,9 @@
                         "mode": "continuous-RdYlGr"
                     },
                     "mappings": [],
-                    "max": 10,
-                    "min": 1028344,
+                    "max": 1028344,
+                    "min": 10,
+                    "noValue": "0",
                     "thresholds": {
                         "mode": "absolute",
                         "steps": [{
@@ -1058,20 +1059,20 @@
                     "filter": "contador"
                 },
                 "functions": [{
+                    "$$hashKey": "object:84",
                     "def": {
-                        "name": "setAlias",
                         "category": "Alias",
+                        "defaultParams": [],
+                        "name": "setAlias",
                         "params": [{
                             "name": "alias",
                             "type": "string"
-                        }],
-                        "defaultParams": []
+                        }]
                     },
                     "params": [
                         " "
                     ],
-                    "text": "setAlias( )",
-                    "$$hashKey": "object:84"
+                    "text": "setAlias( )"
                 }],
                 "group": {
                     "filter": "OLT INTELBRAS GPON"
@@ -1670,8 +1671,8 @@
             "allValue": "1",
             "current": {
                 "selected": true,
-                "text": "NOVA_REP_OLT_01",
-                "value": "NOVA_REP_OLT_01"
+                "text": "JADERLANDIA_OLT_01",
+                "value": "JADERLANDIA_OLT_01"
             },
             "datasource": null,
             "definition": "Zabbix - host",
@@ -1719,5 +1720,5 @@
     "timezone": "",
     "title": "OLTS INTELBRAS GPON",
     "uid": "ct8KrtuGk",
-    "version": 176
+    "version": 178
 }
