@@ -2,6 +2,8 @@
 
 ## ⏳ em contruçao... ⚡
 
+![image](https://user-images.githubusercontent.com/23584038/127940755-d5691f16-95eb-464d-89b5-604860610a87.png)
+
 - UPTIME
 - MEMORIA RAM LIVRE
 - CPU
@@ -14,8 +16,6 @@
   - RX POWER
   - TX POWER
   - TEMPERATURA
-
-![image](https://user-images.githubusercontent.com/23584038/127940755-d5691f16-95eb-464d-89b5-604860610a87.png)
 
 [Video demo](/contents/demo.mp4)
 
