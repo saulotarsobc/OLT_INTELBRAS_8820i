@@ -30,7 +30,7 @@
 
 > Dividi o Template em três. Para usar conforme a necessidade
 
-![image](https://user-images.githubusercontent.com/23584038/128022449-86581802-1282-4ebc-a16e-efbaae2cd852.png)
+![image](https://user-images.githubusercontent.com/23584038/128024800-857a459b-3e22-4ddd-a710-84cdd7b9e07d.png)
 
 > O descoberta para analise de trafego filtra apenas as interfaces com status UP.
 
