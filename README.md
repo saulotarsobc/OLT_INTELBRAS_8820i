@@ -23,3 +23,18 @@
 [Template](./contents/OLT_INTELBRAS_8820i.xml)
 
 [Dashboard](contents/OLT_INTELBRAS_8820i.xml)
+
+## ZABBIX - TEMPLATE
+
+> Contador de ONU's ativas por PON
+
+```js
+$.[?(@.PON == '1' && @.REG == '1')].length()
+$.[?(@.PON == '2' && @.REG == '1')].length()
+$.[?(@.PON == '3' && @.REG == '1')].length()
+$.[?(@.PON == '4' && @.REG == '1')].length()
+$.[?(@.PON == '5' && @.REG == '1')].length()
+$.[?(@.PON == '6' && @.REG == '1')].length()
+$.[?(@.PON == '7' && @.REG == '1')].length()
+$.[?(@.PON == '8' && @.REG == '1')].length()
+```
