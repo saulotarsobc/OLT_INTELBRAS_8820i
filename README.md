@@ -2,7 +2,7 @@
 
 ## ⏳ Em contruçao... ⚡
 
-![image](https://user-images.githubusercontent.com/23584038/127940755-d5691f16-95eb-464d-89b5-604860610a87.png)
+![image](https://user-images.githubusercontent.com/23584038/128059629-2529abbf-f3de-4c0f-9de8-5ac2c68d57b8.png)
 
 ## O que vai encontrar nesse template?
 
