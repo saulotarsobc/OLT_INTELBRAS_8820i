@@ -28,6 +28,8 @@
 
 ## ZABBIX - TEMPLATE
 
+![image](https://user-images.githubusercontent.com/23584038/128022449-86581802-1282-4ebc-a16e-efbaae2cd852.png)
+
 > Item discovery de ONU's. Busca a se as ONU's estão autorizadas e qual é a PON.
 
 ```js
