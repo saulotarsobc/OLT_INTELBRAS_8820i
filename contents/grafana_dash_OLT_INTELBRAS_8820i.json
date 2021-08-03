@@ -19,7 +19,7 @@
     "gnetId": null,
     "graphTooltip": 0,
     "id": 31,
-    "iteration": 1627939125420,
+    "iteration": 1627951209760,
     "links": [],
     "panels": [{
             "datasource": null,
@@ -1010,6 +1010,7 @@
         },
         {
             "datasource": null,
+            "description": "",
             "fieldConfig": {
                 "defaults": {
                     "color": {
@@ -1017,8 +1018,8 @@
                     },
                     "decimals": 0,
                     "mappings": [],
-                    "max": 70,
-                    "min": 35,
+                    "max": 126,
+                    "min": 0,
                     "noValue": "0",
                     "thresholds": {
                         "mode": "absolute",
@@ -1027,17 +1028,17 @@
                             "value": null
                         }]
                     },
-                    "unit": "celsius"
+                    "unit": "none"
                 },
                 "overrides": []
             },
             "gridPos": {
                 "h": 9,
-                "w": 6,
+                "w": 4,
                 "x": 8,
                 "y": 5
             },
-            "id": 31,
+            "id": 39,
             "options": {
                 "displayMode": "gradient",
                 "orientation": "horizontal",
@@ -1054,24 +1055,23 @@
             "pluginVersion": "8.0.6",
             "targets": [{
                 "application": {
-                    "filter": "interface"
+                    "filter": "contador"
                 },
                 "functions": [{
-                    "$$hashKey": "object:33",
-                    "added": false,
                     "def": {
-                        "category": "Alias",
-                        "defaultParams": [],
                         "name": "setAlias",
+                        "category": "Alias",
                         "params": [{
                             "name": "alias",
                             "type": "string"
-                        }]
+                        }],
+                        "defaultParams": []
                     },
                     "params": [
                         " "
                     ],
-                    "text": "setAlias( )"
+                    "text": "setAlias( )",
+                    "$$hashKey": "object:84"
                 }],
                 "group": {
                     "filter": "OLT INTELBRAS GPON"
@@ -1080,7 +1080,7 @@
                     "filter": "$OLT"
                 },
                 "item": {
-                    "filter": "/Interface SFP Temperatura/"
+                    "filter": "/.*/"
                 },
                 "options": {
                     "disableDataAlignment": false,
@@ -1109,7 +1109,110 @@
                     "minSeverity": 3
                 }
             }],
-            "title": "Temperatura🔥",
+            "title": "Contagem de ONU's",
+            "type": "bargauge"
+        },
+        {
+            "datasource": null,
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "continuous-RdYlGr"
+                    },
+                    "decimals": 0,
+                    "mappings": [],
+                    "max": -16,
+                    "min": -26,
+                    "noValue": "0",
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [{
+                            "color": "green",
+                            "value": null
+                        }]
+                    },
+                    "unit": "celsius"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 9,
+                "w": 4,
+                "x": 12,
+                "y": 5
+            },
+            "id": 35,
+            "options": {
+                "displayMode": "gradient",
+                "orientation": "horizontal",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showUnfilled": true,
+                "text": {}
+            },
+            "pluginVersion": "8.0.6",
+            "targets": [{
+                "application": {
+                    "filter": "interface"
+                },
+                "functions": [{
+                    "$$hashKey": "object:86",
+                    "def": {
+                        "category": "Alias",
+                        "defaultParams": [],
+                        "name": "setAlias",
+                        "params": [{
+                            "name": "alias",
+                            "type": "string"
+                        }]
+                    },
+                    "params": [
+                        " "
+                    ],
+                    "text": "setAlias( )"
+                }],
+                "group": {
+                    "filter": "OLT INTELBRAS GPON"
+                },
+                "host": {
+                    "filter": "$OLT"
+                },
+                "item": {
+                    "filter": "/Interface SFP Rx Power/"
+                },
+                "options": {
+                    "disableDataAlignment": false,
+                    "showDisabledItems": false,
+                    "skipEmptyValues": false,
+                    "useZabbixValueMapping": false
+                },
+                "proxy": {
+                    "filter": ""
+                },
+                "queryType": 0,
+                "refId": "A",
+                "resultFormat": "time_series",
+                "table": {
+                    "skipEmptyValues": false
+                },
+                "tags": {
+                    "filter": ""
+                },
+                "trigger": {
+                    "filter": ""
+                },
+                "triggers": {
+                    "acknowledged": 2,
+                    "count": true,
+                    "minSeverity": 3
+                }
+            }],
+            "title": "Rx Power",
             "type": "bargauge"
         },
         {
@@ -1137,8 +1240,8 @@
             },
             "gridPos": {
                 "h": 9,
-                "w": 5,
-                "x": 14,
+                "w": 4,
+                "x": 16,
                 "y": 5
             },
             "id": 34,
@@ -1220,12 +1323,12 @@
             "fieldConfig": {
                 "defaults": {
                     "color": {
-                        "mode": "continuous-RdYlGr"
+                        "mode": "continuous-GrYlRd"
                     },
                     "decimals": 0,
                     "mappings": [],
-                    "max": -16,
-                    "min": -26,
+                    "max": 70,
+                    "min": 35,
                     "noValue": "0",
                     "thresholds": {
                         "mode": "absolute",
@@ -1240,11 +1343,11 @@
             },
             "gridPos": {
                 "h": 9,
-                "w": 5,
-                "x": 19,
+                "w": 4,
+                "x": 20,
                 "y": 5
             },
-            "id": 35,
+            "id": 31,
             "options": {
                 "displayMode": "gradient",
                 "orientation": "horizontal",
@@ -1264,7 +1367,8 @@
                     "filter": "interface"
                 },
                 "functions": [{
-                    "$$hashKey": "object:86",
+                    "$$hashKey": "object:33",
+                    "added": false,
                     "def": {
                         "category": "Alias",
                         "defaultParams": [],
@@ -1286,7 +1390,7 @@
                     "filter": "$OLT"
                 },
                 "item": {
-                    "filter": "/Interface SFP Rx Power/"
+                    "filter": "/Interface SFP Temperatura/"
                 },
                 "options": {
                     "disableDataAlignment": false,
@@ -1315,7 +1419,7 @@
                     "minSeverity": 3
                 }
             }],
-            "title": "Rx Power",
+            "title": "Temperatura🔥",
             "type": "bargauge"
         },
         {
@@ -1565,9 +1669,9 @@
         "list": [{
             "allValue": "1",
             "current": {
-                "selected": false,
-                "text": "JADERLANDIA_OLT_01",
-                "value": "JADERLANDIA_OLT_01"
+                "selected": true,
+                "text": "NOVA_REP_OLT_01",
+                "value": "NOVA_REP_OLT_01"
             },
             "datasource": null,
             "definition": "Zabbix - host",
@@ -1615,5 +1719,5 @@
     "timezone": "",
     "title": "OLTS INTELBRAS GPON",
     "uid": "ct8KrtuGk",
-    "version": 174
+    "version": 176
 }
