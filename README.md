@@ -28,7 +28,7 @@
 
 ## ZABBIX - TEMPLATE
 
-> Dividi o Template em três. Para usar conforme a necessidade
+> Dividi o Template em três. Para usar conforme a necessidade.
 
 ![image](https://user-images.githubusercontent.com/23584038/128024800-857a459b-3e22-4ddd-a710-84cdd7b9e07d.png)
 
