@@ -4,9 +4,10 @@
 
 ![image](https://user-images.githubusercontent.com/23584038/127940755-d5691f16-95eb-464d-89b5-604860610a87.png)
 
-- UPTIME
-- MEMORIA RAM LIVRE
-- CPU
+- SISTEMA
+  - UPTIME
+  - MEMORIA RAM LIVRE
+  - CPU
 - STATUS DAS PORTAS
 - GPON
   - STATUS DA GPON
