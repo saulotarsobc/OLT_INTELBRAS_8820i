@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2021-08-03T19:07:49Z</date>
+    <date>2021-08-03T21:05:20Z</date>
     <groups>
         <group>
             <name>OLT INTELBRAS GPON</name>
@@ -193,8 +193,9 @@
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.26138.1.1.1.1.1.7.{#SNMPINDEX}</snmp_oid>
                             <key>sfpStatusIfVoltage[{#NAME}]</key>
-                            <delay>10m</delay>
-                            <units>V</units>
+                            <delay>30s</delay>
+                            <value_type>FLOAT</value_type>
+                            <units>volt</units>
                             <applications>
                                 <application>
                                     <name>interface</name>
@@ -203,6 +204,12 @@
                                     <name>voltagem</name>
                                 </application>
                             </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>MULTIPLIER</type>
+                                    <params>0.001</params>
+                                </step>
+                            </preprocessing>
                         </item_prototype>
                     </item_prototypes>
                 </discovery_rule>
@@ -228,6 +235,8 @@
                             <snmp_oid>1.3.6.1.2.1.31.1.1.1.11.{#SNMPINDEX}</snmp_oid>
                             <key>interface.trafic.in[{#NAME}]</key>
                             <trends>90d</trends>
+                            <status>DISABLED</status>
+                            <discover>NO_DISCOVER</discover>
                             <units>bps</units>
                             <applications>
                                 <application>
@@ -254,6 +263,8 @@
                             <snmp_oid>1.3.6.1.2.1.31.1.1.1.12.{#SNMPINDEX}</snmp_oid>
                             <key>interface.trafic.out.[{#NAME}]</key>
                             <trends>90d</trends>
+                            <status>DISABLED</status>
+                            <discover>NO_DISCOVER</discover>
                             <units>bps</units>
                             <applications>
                                 <application>
@@ -325,6 +336,9 @@
             <applications>
                 <application>
                     <name>contador</name>
+                </application>
+                <application>
+                    <name>onu</name>
                 </application>
             </applications>
             <items>
@@ -497,11 +511,10 @@
                     </master_item>
                 </item>
                 <item>
-                    <name>Contagem de ONUs</name>
+                    <name>Coleta de ONU's</name>
                     <type>SNMP_AGENT</type>
-                    <snmp_oid>discovery[{#REG},1.3.6.1.4.1.26138.1.2.1.1.1.4, {#PON},1.3.6.1.4.1.26138.1.2.1.1.1.2]</snmp_oid>
+                    <snmp_oid>discovery[{#MAC},1.3.6.1.4.1.26138.1.2.1.1.1.6, {#REG},1.3.6.1.4.1.26138.1.2.1.1.1.4, {#PON},1.3.6.1.4.1.26138.1.2.1.1.1.2, {#POS},1.3.6.1.4.1.26138.1.2.1.1.1.3]</snmp_oid>
                     <key>contagem.onus</key>
-                    <delay>10m</delay>
                     <history>1d</history>
                     <trends>0</trends>
                     <value_type>CHAR</value_type>
@@ -524,6 +537,70 @@ PON</params>
                     </preprocessing>
                 </item>
             </items>
+            <discovery_rules>
+                <discovery_rule>
+                    <name>Discovery ONU's Autorizadas</name>
+                    <type>DEPENDENT</type>
+                    <key>discovery.onus.autorizadas</key>
+                    <delay>0</delay>
+                    <filter>
+                        <conditions>
+                            <condition>
+                                <macro>{#REG}</macro>
+                                <value>1</value>
+                                <formulaid>A</formulaid>
+                            </condition>
+                        </conditions>
+                    </filter>
+                    <lifetime>0d</lifetime>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>ONU 1/{#PON}/{#POS} - {#MAC}</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>1.3.6.1.4.1.26138.1.2.1.1.1.9.{#SNMPINDEX}</snmp_oid>
+                            <key>onu[{#MAC}]</key>
+                            <trends>90d</trends>
+                            <value_type>FLOAT</value_type>
+                            <units>dBm</units>
+                            <applications>
+                                <application>
+                                    <name>onu</name>
+                                </application>
+                            </applications>
+                            <application_prototypes>
+                                <application_prototype>
+                                    <name>PON {#PON}</name>
+                                </application_prototype>
+                            </application_prototypes>
+                            <preprocessing>
+                                <step>
+                                    <type>STR_REPLACE</type>
+                                    <params>0
+00</params>
+                                </step>
+                                <step>
+                                    <type>REGEX</type>
+                                    <params>^\d\d
+-\0</params>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                    </item_prototypes>
+                    <master_item>
+                        <key>contagem.onus</key>
+                    </master_item>
+                    <lld_macro_paths>
+                        <lld_macro_path>
+                            <lld_macro>{#PON}</lld_macro>
+                            <path>$.PON</path>
+                        </lld_macro_path>
+                        <lld_macro_path>
+                            <lld_macro>{#REG}</lld_macro>
+                            <path>$.REG</path>
+                        </lld_macro_path>
+                    </lld_macro_paths>
+                </discovery_rule>
+            </discovery_rules>
         </template>
         <template>
             <template>OLT_INTELBRAS_8820i_Operacional</template>
@@ -571,9 +648,9 @@ CPU</description>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>1.3.6.1.4.1.2021.4.6.0</snmp_oid>
                     <key>memFree</key>
-                    <delay>15m</delay>
+                    <delay>8m</delay>
                     <trends>90d</trends>
-                    <units>KB</units>
+                    <units>kb</units>
                     <applications>
                         <application>
                             <name>geral</name>
