@@ -32,6 +32,12 @@
 
 ![image](https://user-images.githubusercontent.com/23584038/128022449-86581802-1282-4ebc-a16e-efbaae2cd852.png)
 
+> O descoberta para analise de trafego filtra apenas as interfaces com status UP.
+
+```js
+discovery[{#NAME},1.3.6.1.4.1.26138.1.1.1.1.1.2, {#STATUS},1.3.6.1.2.1.2.2.1.8]
+```
+
 > Item discovery de ONU's. Busca a se as ONU's estão autorizadas e qual é a PON.
 
 ```js
@@ -42,7 +48,7 @@ discovery[{#REG},1.3.6.1.4.1.26138.1.2.1.1.1.4, {#PON},1.3.6.1.4.1.26138.1.2.1.1
 
 ![image](https://user-images.githubusercontent.com/23584038/128008078-2a86115e-44ba-4e8f-8213-b50a2963d803.png)
 
-> Contador de ONU's ativas por PON.
+> Contador de ONU's registradas por PON.
 
 ```js
 $.[?(@.PON == '1' && @.REG == '1')].length()
