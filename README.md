@@ -30,7 +30,7 @@
 
 > Dividi o Template em três. Para usar conforme a necessidade
 
-![image](https://user-images.githubusercontent.com/23584038/128024664-56a534f7-3921-4ee7-b139-96fa2596d016.png)
+![image](https://user-images.githubusercontent.com/23584038/128024800-857a459b-3e22-4ddd-a710-84cdd7b9e07d.png)
 
 > Item discovery de ONU's. Busca a se as ONU's estão autorizadas e qual é a PON.
 
