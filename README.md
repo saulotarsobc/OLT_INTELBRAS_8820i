@@ -2,7 +2,18 @@
 
 ## ⏳ em contruçao... ⚡
 
-- CONTADOR DE ONU's POR PON
+- UPTIME
+- MEMORIA RAM LIVRE
+- CPU
+- STATUS DAS PORTAS
+- GPON
+  - STATUS DA GPON
+  - CORRENTE
+  - VOLTAGEM
+  - CONTADOR DE ONU's POR PON
+  - RX POWER
+  - TX POWER
+  - TEMPERATURA
 
 ![image](https://user-images.githubusercontent.com/23584038/127940755-d5691f16-95eb-464d-89b5-604860610a87.png)
 
