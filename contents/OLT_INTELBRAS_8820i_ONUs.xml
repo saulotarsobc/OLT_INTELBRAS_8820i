@@ -1,13 +1,247 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2021-08-03T21:05:20Z</date>
+    <date>2021-08-04T15:25:16Z</date>
     <groups>
         <group>
             <name>OLT INTELBRAS GPON</name>
         </group>
     </groups>
     <templates>
+        <template>
+            <template>OLT_INTELBRAS_8820i_Contador_ONUs</template>
+            <name>OLT_INTELBRAS_8820i_Contador_ONUs</name>
+            <description>Contagem de onus off, online, na olt ou por pon</description>
+            <groups>
+                <group>
+                    <name>OLT INTELBRAS GPON</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>onu online por pon</name>
+                </application>
+                <application>
+                    <name>onu total online</name>
+                </application>
+            </applications>
+            <items>
+                <item>
+                    <name>Coleta Dados Onus</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>discovery[{#MAC},1.3.6.1.4.1.26138.1.2.1.1.1.6, {#REG},1.3.6.1.4.1.26138.1.2.1.1.1.4, {#PON},1.3.6.1.4.1.26138.1.2.1.1.1.2, {#POS},1.3.6.1.4.1.26138.1.2.1.1.1.3, {#ACT},1.3.6.1.4.1.26138.1.2.1.1.1.5, {#OMC},1.3.6.1.4.1.26138.1.2.1.1.1.7]</snmp_oid>
+                    <key>coleta.dados.onus</key>
+                    <delay>5m</delay>
+                    <history>1d</history>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                    <preprocessing>
+                        <step>
+                            <type>STR_REPLACE</type>
+                            <params>{#REG}
+REG</params>
+                        </step>
+                        <step>
+                            <type>STR_REPLACE</type>
+                            <params>{#PON}
+PON</params>
+                        </step>
+                        <step>
+                            <type>STR_REPLACE</type>
+                            <params>{#ACT}
+ACT</params>
+                        </step>
+                        <step>
+                            <type>STR_REPLACE</type>
+                            <params>{#OMC}
+OMC</params>
+                        </step>
+                    </preprocessing>
+                </item>
+                <item>
+                    <name>TOTAL ONLINE PON 1</name>
+                    <type>DEPENDENT</type>
+                    <key>online.pon1</key>
+                    <delay>0</delay>
+                    <trends>90d</trends>
+                    <applications>
+                        <application>
+                            <name>onu online por pon</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JSONPATH</type>
+                            <params>$.[?(@.PON == '1' &amp;&amp; @.ACT == '1')].length()</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>coleta.dados.onus</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>TOTAL ONLINE PON 2</name>
+                    <type>DEPENDENT</type>
+                    <key>online.pon2</key>
+                    <delay>0</delay>
+                    <trends>90d</trends>
+                    <applications>
+                        <application>
+                            <name>onu online por pon</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JSONPATH</type>
+                            <params>$.[?(@.PON == '2' &amp;&amp; @.REG == '1')].length()</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>coleta.dados.onus</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>TOTAL ONLINE PON 3</name>
+                    <type>DEPENDENT</type>
+                    <key>online.pon3</key>
+                    <delay>0</delay>
+                    <trends>90d</trends>
+                    <applications>
+                        <application>
+                            <name>onu online por pon</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JSONPATH</type>
+                            <params>$.[?(@.PON == '3' &amp;&amp; @.REG == '1')].length()</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>coleta.dados.onus</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>TOTAL ONLINE PON 4</name>
+                    <type>DEPENDENT</type>
+                    <key>online.pon4</key>
+                    <delay>0</delay>
+                    <trends>90d</trends>
+                    <applications>
+                        <application>
+                            <name>onu online por pon</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JSONPATH</type>
+                            <params>$.[?(@.PON == '4' &amp;&amp; @.REG == '1')].length()</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>coleta.dados.onus</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>TOTAL ONLINE PON 5</name>
+                    <type>DEPENDENT</type>
+                    <key>online.pon5</key>
+                    <delay>0</delay>
+                    <trends>90d</trends>
+                    <applications>
+                        <application>
+                            <name>onu online por pon</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JSONPATH</type>
+                            <params>$.[?(@.PON == '5' &amp;&amp; @.REG == '1')].length()</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>coleta.dados.onus</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>TOTAL ONLINE PON 6</name>
+                    <type>DEPENDENT</type>
+                    <key>online.pon6</key>
+                    <delay>0</delay>
+                    <trends>90d</trends>
+                    <applications>
+                        <application>
+                            <name>onu online por pon</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JSONPATH</type>
+                            <params>$.[?(@.PON == '6' &amp;&amp; @.REG == '1')].length()</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>coleta.dados.onus</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>TOTAL ONLINE PON 7</name>
+                    <type>DEPENDENT</type>
+                    <key>online.pon7</key>
+                    <delay>0</delay>
+                    <trends>90d</trends>
+                    <applications>
+                        <application>
+                            <name>onu online por pon</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JSONPATH</type>
+                            <params>$.[?(@.PON == '7' &amp;&amp; @.REG == '1')].length()</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>coleta.dados.onus</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>TOTAL ONLINE PON 8</name>
+                    <type>DEPENDENT</type>
+                    <key>online.pon8</key>
+                    <delay>0</delay>
+                    <trends>90d</trends>
+                    <applications>
+                        <application>
+                            <name>onu online por pon</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JSONPATH</type>
+                            <params>$.[?(@.PON == '8' &amp;&amp; @.REG == '1')].length()</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>coleta.dados.onus</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>Total Online</name>
+                    <type>CALCULATED</type>
+                    <key>onu.total.online</key>
+                    <delay>3m</delay>
+                    <history>30d</history>
+                    <trends>30d</trends>
+                    <params>last(&quot;online.pon1&quot;) + last(&quot;online.pon2&quot;) + last(&quot;online.pon3&quot;) + last(&quot;online.pon4&quot;) + last(&quot;online.pon5&quot;) + last(&quot;online.pon6&quot;) + last(&quot;online.pon7&quot;) + last(&quot;online.pon8&quot;)</params>
+                    <applications>
+                        <application>
+                            <name>onu total online</name>
+                        </application>
+                    </applications>
+                </item>
+            </items>
+        </template>
         <template>
             <template>OLT_INTELBRAS_8820i_Interfaces</template>
             <name>OLT_INTELBRAS_8820i_Interfaces</name>
@@ -325,284 +559,6 @@
             </discovery_rules>
         </template>
         <template>
-            <template>OLT_INTELBRAS_8820i_ONUs</template>
-            <name>OLT_INTELBRAS_8820i_ONUs</name>
-            <description>onus</description>
-            <groups>
-                <group>
-                    <name>OLT INTELBRAS GPON</name>
-                </group>
-            </groups>
-            <applications>
-                <application>
-                    <name>contador</name>
-                </application>
-                <application>
-                    <name>onu</name>
-                </application>
-            </applications>
-            <items>
-                <item>
-                    <name>PON 1</name>
-                    <type>DEPENDENT</type>
-                    <key>contador.pon1</key>
-                    <delay>0</delay>
-                    <trends>90d</trends>
-                    <applications>
-                        <application>
-                            <name>contador</name>
-                        </application>
-                    </applications>
-                    <preprocessing>
-                        <step>
-                            <type>JSONPATH</type>
-                            <params>$.[?(@.PON == '1' &amp;&amp; @.REG == '1')].length()</params>
-                        </step>
-                    </preprocessing>
-                    <master_item>
-                        <key>contagem.onus</key>
-                    </master_item>
-                </item>
-                <item>
-                    <name>PON 2</name>
-                    <type>DEPENDENT</type>
-                    <key>contador.pon2</key>
-                    <delay>0</delay>
-                    <trends>90d</trends>
-                    <applications>
-                        <application>
-                            <name>contador</name>
-                        </application>
-                    </applications>
-                    <preprocessing>
-                        <step>
-                            <type>JSONPATH</type>
-                            <params>$.[?(@.PON == '2' &amp;&amp; @.REG == '1')].length()</params>
-                        </step>
-                    </preprocessing>
-                    <master_item>
-                        <key>contagem.onus</key>
-                    </master_item>
-                </item>
-                <item>
-                    <name>PON 3</name>
-                    <type>DEPENDENT</type>
-                    <key>contador.pon3</key>
-                    <delay>0</delay>
-                    <trends>90d</trends>
-                    <applications>
-                        <application>
-                            <name>contador</name>
-                        </application>
-                    </applications>
-                    <preprocessing>
-                        <step>
-                            <type>JSONPATH</type>
-                            <params>$.[?(@.PON == '3' &amp;&amp; @.REG == '1')].length()</params>
-                        </step>
-                    </preprocessing>
-                    <master_item>
-                        <key>contagem.onus</key>
-                    </master_item>
-                </item>
-                <item>
-                    <name>PON 4</name>
-                    <type>DEPENDENT</type>
-                    <key>contador.pon4</key>
-                    <delay>0</delay>
-                    <trends>90d</trends>
-                    <applications>
-                        <application>
-                            <name>contador</name>
-                        </application>
-                    </applications>
-                    <preprocessing>
-                        <step>
-                            <type>JSONPATH</type>
-                            <params>$.[?(@.PON == '4' &amp;&amp; @.REG == '1')].length()</params>
-                        </step>
-                    </preprocessing>
-                    <master_item>
-                        <key>contagem.onus</key>
-                    </master_item>
-                </item>
-                <item>
-                    <name>PON 5</name>
-                    <type>DEPENDENT</type>
-                    <key>contador.pon5</key>
-                    <delay>0</delay>
-                    <trends>90d</trends>
-                    <applications>
-                        <application>
-                            <name>contador</name>
-                        </application>
-                    </applications>
-                    <preprocessing>
-                        <step>
-                            <type>JSONPATH</type>
-                            <params>$.[?(@.PON == '5' &amp;&amp; @.REG == '1')].length()</params>
-                        </step>
-                    </preprocessing>
-                    <master_item>
-                        <key>contagem.onus</key>
-                    </master_item>
-                </item>
-                <item>
-                    <name>PON 6</name>
-                    <type>DEPENDENT</type>
-                    <key>contador.pon6</key>
-                    <delay>0</delay>
-                    <trends>90d</trends>
-                    <applications>
-                        <application>
-                            <name>contador</name>
-                        </application>
-                    </applications>
-                    <preprocessing>
-                        <step>
-                            <type>JSONPATH</type>
-                            <params>$.[?(@.PON == '6' &amp;&amp; @.REG == '1')].length()</params>
-                        </step>
-                    </preprocessing>
-                    <master_item>
-                        <key>contagem.onus</key>
-                    </master_item>
-                </item>
-                <item>
-                    <name>PON 7</name>
-                    <type>DEPENDENT</type>
-                    <key>contador.pon7</key>
-                    <delay>0</delay>
-                    <trends>90d</trends>
-                    <applications>
-                        <application>
-                            <name>contador</name>
-                        </application>
-                    </applications>
-                    <preprocessing>
-                        <step>
-                            <type>JSONPATH</type>
-                            <params>$.[?(@.PON == '7' &amp;&amp; @.REG == '1')].length()</params>
-                        </step>
-                    </preprocessing>
-                    <master_item>
-                        <key>contagem.onus</key>
-                    </master_item>
-                </item>
-                <item>
-                    <name>PON 8</name>
-                    <type>DEPENDENT</type>
-                    <key>contador.pon8</key>
-                    <delay>0</delay>
-                    <trends>90d</trends>
-                    <applications>
-                        <application>
-                            <name>contador</name>
-                        </application>
-                    </applications>
-                    <preprocessing>
-                        <step>
-                            <type>JSONPATH</type>
-                            <params>$.[?(@.PON == '8' &amp;&amp; @.REG == '1')].length()</params>
-                        </step>
-                    </preprocessing>
-                    <master_item>
-                        <key>contagem.onus</key>
-                    </master_item>
-                </item>
-                <item>
-                    <name>Coleta de ONU's</name>
-                    <type>SNMP_AGENT</type>
-                    <snmp_oid>discovery[{#MAC},1.3.6.1.4.1.26138.1.2.1.1.1.6, {#REG},1.3.6.1.4.1.26138.1.2.1.1.1.4, {#PON},1.3.6.1.4.1.26138.1.2.1.1.1.2, {#POS},1.3.6.1.4.1.26138.1.2.1.1.1.3]</snmp_oid>
-                    <key>contagem.onus</key>
-                    <history>1d</history>
-                    <trends>0</trends>
-                    <value_type>CHAR</value_type>
-                    <applications>
-                        <application>
-                            <name>contador</name>
-                        </application>
-                    </applications>
-                    <preprocessing>
-                        <step>
-                            <type>STR_REPLACE</type>
-                            <params>{#REG}
-REG</params>
-                        </step>
-                        <step>
-                            <type>STR_REPLACE</type>
-                            <params>{#PON}
-PON</params>
-                        </step>
-                    </preprocessing>
-                </item>
-            </items>
-            <discovery_rules>
-                <discovery_rule>
-                    <name>Discovery ONU's Autorizadas</name>
-                    <type>DEPENDENT</type>
-                    <key>discovery.onus.autorizadas</key>
-                    <delay>0</delay>
-                    <filter>
-                        <conditions>
-                            <condition>
-                                <macro>{#REG}</macro>
-                                <value>1</value>
-                                <formulaid>A</formulaid>
-                            </condition>
-                        </conditions>
-                    </filter>
-                    <lifetime>0d</lifetime>
-                    <item_prototypes>
-                        <item_prototype>
-                            <name>ONU 1/{#PON}/{#POS} - {#MAC}</name>
-                            <type>SNMP_AGENT</type>
-                            <snmp_oid>1.3.6.1.4.1.26138.1.2.1.1.1.9.{#SNMPINDEX}</snmp_oid>
-                            <key>onu[{#MAC}]</key>
-                            <trends>90d</trends>
-                            <value_type>FLOAT</value_type>
-                            <units>dBm</units>
-                            <applications>
-                                <application>
-                                    <name>onu</name>
-                                </application>
-                            </applications>
-                            <application_prototypes>
-                                <application_prototype>
-                                    <name>PON {#PON}</name>
-                                </application_prototype>
-                            </application_prototypes>
-                            <preprocessing>
-                                <step>
-                                    <type>STR_REPLACE</type>
-                                    <params>0
-00</params>
-                                </step>
-                                <step>
-                                    <type>REGEX</type>
-                                    <params>^\d\d
--\0</params>
-                                </step>
-                            </preprocessing>
-                        </item_prototype>
-                    </item_prototypes>
-                    <master_item>
-                        <key>contagem.onus</key>
-                    </master_item>
-                    <lld_macro_paths>
-                        <lld_macro_path>
-                            <lld_macro>{#PON}</lld_macro>
-                            <path>$.PON</path>
-                        </lld_macro_path>
-                        <lld_macro_path>
-                            <lld_macro>{#REG}</lld_macro>
-                            <path>$.REG</path>
-                        </lld_macro_path>
-                    </lld_macro_paths>
-                </discovery_rule>
-            </discovery_rules>
-        </template>
-        <template>
             <template>OLT_INTELBRAS_8820i_Operacional</template>
             <name>OLT_INTELBRAS_8820i_Operacional</name>
             <description>Uptime&#13;
@@ -697,7 +653,7 @@ CPU</description>
     </templates>
     <triggers>
         <trigger>
-            <expression>{OLT_INTELBRAS_8820i_ONUs:contador.pon1.last()}&gt;120 or {OLT_INTELBRAS_8820i_ONUs:contador.pon2.last()}&gt;120 or {OLT_INTELBRAS_8820i_ONUs:contador.pon3.last()}&gt;120 or {OLT_INTELBRAS_8820i_ONUs:contador.pon4.last()}&gt;120 or {OLT_INTELBRAS_8820i_ONUs:contador.pon5.last()}&gt;120 or {OLT_INTELBRAS_8820i_ONUs:contador.pon6.last()}&gt;120 or {OLT_INTELBRAS_8820i_ONUs:contador.pon7.last()}&gt;120 or {OLT_INTELBRAS_8820i_ONUs:contador.pon8.last()}&gt;120</expression>
+            <expression>{OLT_INTELBRAS_8820i_Contador_ONUs:online.pon1.last()}&gt;120 or {OLT_INTELBRAS_8820i_Contador_ONUs:online.pon2.last()}&gt;120 or {OLT_INTELBRAS_8820i_Contador_ONUs:online.pon3.last()}&gt;120 or {OLT_INTELBRAS_8820i_Contador_ONUs:online.pon4.last()}&gt;120 or {OLT_INTELBRAS_8820i_Contador_ONUs:online.pon5.last()}&gt;120 or {OLT_INTELBRAS_8820i_Contador_ONUs:online.pon6.last()}&gt;120 or {OLT_INTELBRAS_8820i_Contador_ONUs:online.pon7.last()}&gt;120 or {OLT_INTELBRAS_8820i_Contador_ONUs:online.pon8.last()}&gt;120</expression>
             <name>Alerta de Limite da PON</name>
             <opdata>Mais de 120 ONU's na PON</opdata>
             <priority>AVERAGE</priority>
