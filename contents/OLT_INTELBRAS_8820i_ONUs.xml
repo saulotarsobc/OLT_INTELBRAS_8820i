@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2021-08-04T15:25:16Z</date>
+    <date>2021-08-04T18:21:04Z</date>
     <groups>
         <group>
             <name>OLT INTELBRAS GPON</name>
@@ -9,8 +9,8 @@
     </groups>
     <templates>
         <template>
-            <template>OLT_INTELBRAS_8820i_Contador_ONUs</template>
-            <name>OLT_INTELBRAS_8820i_Contador_ONUs</name>
+            <template>OLT_INTELBRAS_8820i_Contadores</template>
+            <name>OLT_INTELBRAS_8820i_Contadores</name>
             <description>Contagem de onus off, online, na olt ou por pon</description>
             <groups>
                 <group>
@@ -29,18 +29,13 @@
                 <item>
                     <name>Coleta Dados Onus</name>
                     <type>SNMP_AGENT</type>
-                    <snmp_oid>discovery[{#MAC},1.3.6.1.4.1.26138.1.2.1.1.1.6, {#REG},1.3.6.1.4.1.26138.1.2.1.1.1.4, {#PON},1.3.6.1.4.1.26138.1.2.1.1.1.2, {#POS},1.3.6.1.4.1.26138.1.2.1.1.1.3, {#ACT},1.3.6.1.4.1.26138.1.2.1.1.1.5, {#OMC},1.3.6.1.4.1.26138.1.2.1.1.1.7]</snmp_oid>
+                    <snmp_oid>discovery[{#PON},1.3.6.1.4.1.26138.1.2.1.1.1.2, {#ACT},1.3.6.1.4.1.26138.1.2.1.1.1.5]</snmp_oid>
                     <key>coleta.dados.onus</key>
                     <delay>5m</delay>
                     <history>1d</history>
                     <trends>0</trends>
                     <value_type>CHAR</value_type>
                     <preprocessing>
-                        <step>
-                            <type>STR_REPLACE</type>
-                            <params>{#REG}
-REG</params>
-                        </step>
                         <step>
                             <type>STR_REPLACE</type>
                             <params>{#PON}
@@ -50,11 +45,6 @@ PON</params>
                             <type>STR_REPLACE</type>
                             <params>{#ACT}
 ACT</params>
-                        </step>
-                        <step>
-                            <type>STR_REPLACE</type>
-                            <params>{#OMC}
-OMC</params>
                         </step>
                     </preprocessing>
                 </item>
@@ -93,7 +83,7 @@ OMC</params>
                     <preprocessing>
                         <step>
                             <type>JSONPATH</type>
-                            <params>$.[?(@.PON == '2' &amp;&amp; @.REG == '1')].length()</params>
+                            <params>$.[?(@.PON == '2' &amp;&amp; @.ACT == '1')].length()</params>
                         </step>
                     </preprocessing>
                     <master_item>
@@ -114,7 +104,7 @@ OMC</params>
                     <preprocessing>
                         <step>
                             <type>JSONPATH</type>
-                            <params>$.[?(@.PON == '3' &amp;&amp; @.REG == '1')].length()</params>
+                            <params>$.[?(@.PON == '3' &amp;&amp; @.ACT == '1')].length()</params>
                         </step>
                     </preprocessing>
                     <master_item>
@@ -135,7 +125,7 @@ OMC</params>
                     <preprocessing>
                         <step>
                             <type>JSONPATH</type>
-                            <params>$.[?(@.PON == '4' &amp;&amp; @.REG == '1')].length()</params>
+                            <params>$.[?(@.PON == '4' &amp;&amp; @.ACT == '1')].length()</params>
                         </step>
                     </preprocessing>
                     <master_item>
@@ -156,7 +146,7 @@ OMC</params>
                     <preprocessing>
                         <step>
                             <type>JSONPATH</type>
-                            <params>$.[?(@.PON == '5' &amp;&amp; @.REG == '1')].length()</params>
+                            <params>$.[?(@.PON == '5' &amp;&amp; @.ACT == '1')].length()</params>
                         </step>
                     </preprocessing>
                     <master_item>
@@ -177,7 +167,7 @@ OMC</params>
                     <preprocessing>
                         <step>
                             <type>JSONPATH</type>
-                            <params>$.[?(@.PON == '6' &amp;&amp; @.REG == '1')].length()</params>
+                            <params>$.[?(@.PON == '6' &amp;&amp; @.ACT == '1')].length()</params>
                         </step>
                     </preprocessing>
                     <master_item>
@@ -198,7 +188,7 @@ OMC</params>
                     <preprocessing>
                         <step>
                             <type>JSONPATH</type>
-                            <params>$.[?(@.PON == '7' &amp;&amp; @.REG == '1')].length()</params>
+                            <params>$.[?(@.PON == '7' &amp;&amp; @.ACT == '1')].length()</params>
                         </step>
                     </preprocessing>
                     <master_item>
@@ -219,7 +209,7 @@ OMC</params>
                     <preprocessing>
                         <step>
                             <type>JSONPATH</type>
-                            <params>$.[?(@.PON == '8' &amp;&amp; @.REG == '1')].length()</params>
+                            <params>$.[?(@.PON == '8' &amp;&amp; @.ACT == '1')].length()</params>
                         </step>
                     </preprocessing>
                     <master_item>
@@ -230,7 +220,7 @@ OMC</params>
                     <name>Total Online</name>
                     <type>CALCULATED</type>
                     <key>onu.total.online</key>
-                    <delay>3m</delay>
+                    <delay>5m</delay>
                     <history>30d</history>
                     <trends>30d</trends>
                     <params>last(&quot;online.pon1&quot;) + last(&quot;online.pon2&quot;) + last(&quot;online.pon3&quot;) + last(&quot;online.pon4&quot;) + last(&quot;online.pon5&quot;) + last(&quot;online.pon6&quot;) + last(&quot;online.pon7&quot;) + last(&quot;online.pon8&quot;)</params>
@@ -265,12 +255,6 @@ OMC</params>
                 </application>
                 <application>
                     <name>temperatura</name>
-                </application>
-                <application>
-                    <name>traffic in</name>
-                </application>
-                <application>
-                    <name>traffic out</name>
                 </application>
                 <application>
                     <name>tx power</name>
@@ -335,6 +319,7 @@ OMC</params>
                             <snmp_oid>1.3.6.1.2.1.2.2.1.8.{#SNMPINDEX}</snmp_oid>
                             <key>interface.gpon.status[{#NAME}]</key>
                             <delay>2m</delay>
+                            <trends>90d</trends>
                             <applications>
                                 <application>
                                     <name>interface</name>
@@ -349,7 +334,8 @@ OMC</params>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.26138.1.1.1.1.1.10.{#SNMPINDEX}</snmp_oid>
                             <key>sfpStatusIfRxPower[{#NAME}]</key>
-                            <delay>3m</delay>
+                            <delay>5m</delay>
+                            <trends>90d</trends>
                             <value_type>FLOAT</value_type>
                             <units>dBm</units>
                             <applications>
@@ -372,7 +358,8 @@ OMC</params>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.26138.1.1.1.1.1.6.{#SNMPINDEX}</snmp_oid>
                             <key>sfpStatusIfTemperature[{#NAME}]</key>
-                            <delay>10m</delay>
+                            <delay>5m</delay>
+                            <trends>90d</trends>
                             <units>°C</units>
                             <applications>
                                 <application>
@@ -388,7 +375,8 @@ OMC</params>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.26138.1.1.1.1.1.8.{#SNMPINDEX}</snmp_oid>
                             <key>sfpStatusIfTxBias[{#NAME}]</key>
-                            <delay>10m</delay>
+                            <delay>5m</delay>
+                            <trends>90d</trends>
                             <units>mA</units>
                             <applications>
                                 <application>
@@ -405,6 +393,7 @@ OMC</params>
                             <snmp_oid>1.3.6.1.4.1.26138.1.1.1.1.1.9.{#SNMPINDEX}</snmp_oid>
                             <key>sfpStatusIfTxPower[{#NAME}]</key>
                             <delay>3m</delay>
+                            <trends>90d</trends>
                             <value_type>FLOAT</value_type>
                             <units>dBm</units>
                             <applications>
@@ -427,7 +416,8 @@ OMC</params>
                             <type>SNMP_AGENT</type>
                             <snmp_oid>1.3.6.1.4.1.26138.1.1.1.1.1.7.{#SNMPINDEX}</snmp_oid>
                             <key>sfpStatusIfVoltage[{#NAME}]</key>
-                            <delay>30s</delay>
+                            <delay>5m</delay>
+                            <trends>90d</trends>
                             <value_type>FLOAT</value_type>
                             <units>volt</units>
                             <applications>
@@ -442,80 +432,6 @@ OMC</params>
                                 <step>
                                     <type>MULTIPLIER</type>
                                     <params>0.001</params>
-                                </step>
-                            </preprocessing>
-                        </item_prototype>
-                    </item_prototypes>
-                </discovery_rule>
-                <discovery_rule>
-                    <name>Discovery Interfaces Status Up</name>
-                    <type>SNMP_AGENT</type>
-                    <snmp_oid>discovery[{#NAME},1.3.6.1.4.1.26138.1.1.1.1.1.2, {#STATUS},1.3.6.1.2.1.2.2.1.8]</snmp_oid>
-                    <key>discovery.interfaces.up</key>
-                    <delay>10m</delay>
-                    <filter>
-                        <conditions>
-                            <condition>
-                                <macro>{#STATUS}</macro>
-                                <value>1</value>
-                                <formulaid>A</formulaid>
-                            </condition>
-                        </conditions>
-                    </filter>
-                    <item_prototypes>
-                        <item_prototype>
-                            <name>Interface Traffic In - {#NAME}</name>
-                            <type>SNMP_AGENT</type>
-                            <snmp_oid>1.3.6.1.2.1.31.1.1.1.11.{#SNMPINDEX}</snmp_oid>
-                            <key>interface.trafic.in[{#NAME}]</key>
-                            <trends>90d</trends>
-                            <status>DISABLED</status>
-                            <discover>NO_DISCOVER</discover>
-                            <units>bps</units>
-                            <applications>
-                                <application>
-                                    <name>interface</name>
-                                </application>
-                                <application>
-                                    <name>traffic in</name>
-                                </application>
-                            </applications>
-                            <preprocessing>
-                                <step>
-                                    <type>CHANGE_PER_SECOND</type>
-                                    <params/>
-                                </step>
-                                <step>
-                                    <type>MULTIPLIER</type>
-                                    <params>8</params>
-                                </step>
-                            </preprocessing>
-                        </item_prototype>
-                        <item_prototype>
-                            <name>Interface Traffic Out - {#NAME}</name>
-                            <type>SNMP_AGENT</type>
-                            <snmp_oid>1.3.6.1.2.1.31.1.1.1.12.{#SNMPINDEX}</snmp_oid>
-                            <key>interface.trafic.out.[{#NAME}]</key>
-                            <trends>90d</trends>
-                            <status>DISABLED</status>
-                            <discover>NO_DISCOVER</discover>
-                            <units>bps</units>
-                            <applications>
-                                <application>
-                                    <name>interface</name>
-                                </application>
-                                <application>
-                                    <name>traffic out</name>
-                                </application>
-                            </applications>
-                            <preprocessing>
-                                <step>
-                                    <type>CHANGE_PER_SECOND</type>
-                                    <params/>
-                                </step>
-                                <step>
-                                    <type>MULTIPLIER</type>
-                                    <params>8</params>
                                 </step>
                             </preprocessing>
                         </item_prototype>
@@ -557,6 +473,15 @@ OMC</params>
                     </item_prototypes>
                 </discovery_rule>
             </discovery_rules>
+        </template>
+        <template>
+            <template>OLT_INTELBRAS_8820i_ONUs</template>
+            <name>OLT_INTELBRAS_8820i_ONUs</name>
+            <groups>
+                <group>
+                    <name>OLT INTELBRAS GPON</name>
+                </group>
+            </groups>
         </template>
         <template>
             <template>OLT_INTELBRAS_8820i_Operacional</template>
@@ -653,7 +578,7 @@ CPU</description>
     </templates>
     <triggers>
         <trigger>
-            <expression>{OLT_INTELBRAS_8820i_Contador_ONUs:online.pon1.last()}&gt;120 or {OLT_INTELBRAS_8820i_Contador_ONUs:online.pon2.last()}&gt;120 or {OLT_INTELBRAS_8820i_Contador_ONUs:online.pon3.last()}&gt;120 or {OLT_INTELBRAS_8820i_Contador_ONUs:online.pon4.last()}&gt;120 or {OLT_INTELBRAS_8820i_Contador_ONUs:online.pon5.last()}&gt;120 or {OLT_INTELBRAS_8820i_Contador_ONUs:online.pon6.last()}&gt;120 or {OLT_INTELBRAS_8820i_Contador_ONUs:online.pon7.last()}&gt;120 or {OLT_INTELBRAS_8820i_Contador_ONUs:online.pon8.last()}&gt;120</expression>
+            <expression>{OLT_INTELBRAS_8820i_Contadores:online.pon1.last()}&gt;120 or {OLT_INTELBRAS_8820i_Contadores:online.pon2.last()}&gt;120 or {OLT_INTELBRAS_8820i_Contadores:online.pon3.last()}&gt;120 or {OLT_INTELBRAS_8820i_Contadores:online.pon4.last()}&gt;120 or {OLT_INTELBRAS_8820i_Contadores:online.pon5.last()}&gt;120 or {OLT_INTELBRAS_8820i_Contadores:online.pon6.last()}&gt;120 or {OLT_INTELBRAS_8820i_Contadores:online.pon7.last()}&gt;120 or {OLT_INTELBRAS_8820i_Contadores:online.pon8.last()}&gt;120</expression>
             <name>Alerta de Limite da PON</name>
             <opdata>Mais de 120 ONU's na PON</opdata>
             <priority>AVERAGE</priority>
