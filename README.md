@@ -51,12 +51,8 @@ discovery[{#REG},1.3.6.1.4.1.26138.1.2.1.1.1.4, {#PON},1.3.6.1.4.1.26138.1.2.1.1
 > Contador de ONU's registradas por PON.
 
 ```js
-$.[?(@.PON == '1' && @.REG == '1')].length()
-$.[?(@.PON == '2' && @.REG == '1')].length()
-$.[?(@.PON == '3' && @.REG == '1')].length()
-$.[?(@.PON == '4' && @.REG == '1')].length()
-$.[?(@.PON == '5' && @.REG == '1')].length()
-$.[?(@.PON == '6' && @.REG == '1')].length()
-$.[?(@.PON == '7' && @.REG == '1')].length()
-$.[?(@.PON == '8' && @.REG == '1')].length()
+$.[?(@.PON == '1' && @.ACT == '1')].length()
+$.[?(@.PON == '2' && @.ACT == '1')].length()
+$.[?(@.PON == '3' && @.ACT == '1')].length()
+...
 ```
