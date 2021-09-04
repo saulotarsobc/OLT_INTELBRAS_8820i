@@ -48,11 +48,20 @@ discovery[{#PON},1.3.6.1.4.1.26138.1.2.1.1.1.2, {#ACT},1.3.6.1.4.1.26138.1.2.1.1
 
 ![image](https://user-images.githubusercontent.com/23584038/132104637-16ef4efd-9108-498a-b0b9-34216717acb7.png)
 
-> Contador de ONU's registradas por PON.
+> Contador de ONU's Online por PON.
 
 ```js
 $.[?(@.PON == '1' && @.ACT == '1')].length()
 $.[?(@.PON == '2' && @.ACT == '1')].length()
 $.[?(@.PON == '3' && @.ACT == '1')].length()
+...
+```
+
+> Contador de ONU's Provisionadas por PON.
+
+```js
+$.[?(@.PON == '1' && @.REG == '1')].length()
+$.[?(@.PON == '2' && @.REG == '1')].length()
+$.[?(@.PON == '3' && @.REG == '1')].length()
 ...
 ```
