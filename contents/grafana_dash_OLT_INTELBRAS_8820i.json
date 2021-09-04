@@ -19,22 +19,22 @@
     "gnetId": null,
     "graphTooltip": 0,
     "id": 31,
-    "iteration": 1628011045067,
+    "iteration": 1630780452540,
     "links": [],
     "panels": [{
             "datasource": null,
             "gridPos": {
                 "h": 2,
-                "w": 19,
+                "w": 8,
                 "x": 0,
                 "y": 0
             },
             "id": 21,
             "options": {
-                "content": "<div style=\"background-color: #6fb757; color: black; height:60\">\r\n<center style=\"font-size: 33px\">\r\n    OLT - INTELBRAS 8820i ${OLT}\r\n</center>\r\n</div>",
+                "content": "<div style=\"background-color: #6fb757; color: white; height:60\">\r\n<center style=\"font-size: 33px\">\r\n    ${OLT}\r\n</center>\r\n</div>",
                 "mode": "html"
             },
-            "pluginVersion": "8.0.6",
+            "pluginVersion": "8.1.2",
             "targets": [{
                 "application": {
                     "filter": ""
@@ -77,6 +77,7 @@
             }],
             "timeFrom": null,
             "timeShift": null,
+            "transparent": true,
             "type": "text"
         },
         {
@@ -105,8 +106,8 @@
             },
             "gridPos": {
                 "h": 2,
-                "w": 5,
-                "x": 19,
+                "w": 6,
+                "x": 8,
                 "y": 0
             },
             "id": 40,
@@ -127,7 +128,7 @@
                 },
                 "textMode": "value"
             },
-            "pluginVersion": "8.0.6",
+            "pluginVersion": "8.1.2",
             "targets": [{
                 "application": {
                     "filter": "geral"
@@ -179,6 +180,95 @@
             "fieldConfig": {
                 "defaults": {
                     "color": {
+                        "mode": "continuous-GrYlRd"
+                    },
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [{
+                            "color": "green",
+                            "value": null
+                        }]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 2,
+                "w": 5,
+                "x": 14,
+                "y": 0
+            },
+            "id": 24,
+            "options": {
+                "displayMode": "gradient",
+                "orientation": "horizontal",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showUnfilled": true,
+                "text": {}
+            },
+            "pluginVersion": "8.1.2",
+            "targets": [{
+                "application": {
+                    "filter": "geral"
+                },
+                "functions": [],
+                "group": {
+                    "filter": "OLT INTELBRAS GPON"
+                },
+                "host": {
+                    "filter": "$OLT"
+                },
+                "item": {
+                    "filter": "CPU"
+                },
+                "itemTag": {
+                    "filter": "Application: geral"
+                },
+                "options": {
+                    "disableDataAlignment": false,
+                    "showDisabledItems": false,
+                    "skipEmptyValues": false,
+                    "useZabbixValueMapping": false
+                },
+                "proxy": {
+                    "filter": ""
+                },
+                "queryType": "0",
+                "refId": "A",
+                "resultFormat": "time_series",
+                "table": {
+                    "skipEmptyValues": false
+                },
+                "tags": {
+                    "filter": ""
+                },
+                "trigger": {
+                    "filter": ""
+                },
+                "triggers": {
+                    "acknowledged": 2,
+                    "count": true,
+                    "minSeverity": 3
+                }
+            }],
+            "title": "CPU",
+            "type": "bargauge"
+        },
+        {
+            "datasource": null,
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
                         "mode": "continuous-RdYlGr"
                     },
                     "mappings": [],
@@ -198,9 +288,9 @@
             },
             "gridPos": {
                 "h": 2,
-                "w": 4,
-                "x": 0,
-                "y": 2
+                "w": 5,
+                "x": 19,
+                "y": 0
             },
             "id": 25,
             "options": {
@@ -216,7 +306,7 @@
                 "showUnfilled": true,
                 "text": {}
             },
-            "pluginVersion": "8.0.6",
+            "pluginVersion": "8.1.2",
             "targets": [{
                 "application": {
                     "filter": "geral"
@@ -266,31 +356,36 @@
             "fieldConfig": {
                 "defaults": {
                     "color": {
-                        "mode": "continuous-GrYlRd"
+                        "mode": "thresholds"
                     },
                     "mappings": [],
-                    "max": 100,
-                    "min": 0,
                     "thresholds": {
                         "mode": "absolute",
                         "steps": [{
-                            "color": "green",
-                            "value": null
-                        }]
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
                     }
                 },
                 "overrides": []
             },
             "gridPos": {
                 "h": 2,
-                "w": 4,
-                "x": 4,
+                "w": 6,
+                "x": 0,
                 "y": 2
             },
-            "id": 24,
+            "id": 45,
             "options": {
-                "displayMode": "gradient",
-                "orientation": "horizontal",
+                "colorMode": "background",
+                "graphMode": "none",
+                "justifyMode": "auto",
+                "orientation": "vertical",
                 "reduceOptions": {
                     "calcs": [
                         "lastNotNull"
@@ -298,13 +393,13 @@
                     "fields": "",
                     "values": false
                 },
-                "showUnfilled": true,
-                "text": {}
+                "text": {},
+                "textMode": "value_and_name"
             },
-            "pluginVersion": "8.0.6",
+            "pluginVersion": "8.1.2",
             "targets": [{
                 "application": {
-                    "filter": "geral"
+                    "filter": ""
                 },
                 "functions": [],
                 "group": {
@@ -314,7 +409,7 @@
                     "filter": "$OLT"
                 },
                 "item": {
-                    "filter": "CPU"
+                    "filter": "/ICMP/"
                 },
                 "options": {
                     "disableDataAlignment": false,
@@ -343,8 +438,112 @@
                     "minSeverity": 3
                 }
             }],
-            "title": "CPU",
-            "type": "bargauge"
+            "type": "stat"
+        },
+        {
+            "datasource": null,
+            "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "continuous-GrYlRd"
+                    },
+                    "mappings": [],
+                    "max": 1024,
+                    "min": 0,
+                    "noValue": "0",
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [{
+                            "color": "green",
+                            "value": null
+                        }]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 2,
+                "w": 2,
+                "x": 6,
+                "y": 2
+            },
+            "id": 43,
+            "options": {
+                "colorMode": "background",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "horizontal",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "value_and_name"
+            },
+            "pluginVersion": "8.1.2",
+            "targets": [{
+                "application": {
+                    "filter": "onu total online"
+                },
+                "functions": [{
+                    "$$hashKey": "object:35",
+                    "added": false,
+                    "def": {
+                        "category": "Alias",
+                        "defaultParams": [],
+                        "name": "setAlias",
+                        "params": [{
+                            "name": "alias",
+                            "type": "string"
+                        }]
+                    },
+                    "params": [
+                        "ONUs Online"
+                    ],
+                    "text": "setAlias(ONUs Online)"
+                }],
+                "group": {
+                    "filter": "OLT INTELBRAS GPON"
+                },
+                "hide": false,
+                "host": {
+                    "filter": "$OLT"
+                },
+                "item": {
+                    "filter": "/.*/"
+                },
+                "options": {
+                    "disableDataAlignment": false,
+                    "showDisabledItems": false,
+                    "skipEmptyValues": false,
+                    "useZabbixValueMapping": false
+                },
+                "proxy": {
+                    "filter": ""
+                },
+                "queryType": 0,
+                "refId": "A",
+                "resultFormat": "time_series",
+                "table": {
+                    "skipEmptyValues": false
+                },
+                "tags": {
+                    "filter": ""
+                },
+                "trigger": {
+                    "filter": ""
+                },
+                "triggers": {
+                    "acknowledged": 2,
+                    "count": true,
+                    "minSeverity": 3
+                }
+            }],
+            "type": "stat"
         },
         {
             "datasource": null,
@@ -353,9 +552,9 @@
                     "color": {
                         "mode": "thresholds"
                     },
-                    "displayName": "UP",
+                    "displayName": "UP >",
                     "mappings": [],
-                    "noValue": "UP",
+                    "noValue": "UP >",
                     "thresholds": {
                         "mode": "absolute",
                         "steps": [{
@@ -388,7 +587,7 @@
                 "text": {},
                 "textMode": "value"
             },
-            "pluginVersion": "8.0.6",
+            "pluginVersion": "8.1.2",
             "targets": [{
                 "application": {
                     "filter": ""
@@ -463,7 +662,7 @@
                                 "value": 1
                             },
                             {
-                                "color": "#EAB839",
+                                "color": "yellow",
                                 "value": 2
                             }
                         ]
@@ -493,12 +692,13 @@
                 "text": {},
                 "textMode": "name"
             },
-            "pluginVersion": "8.0.6",
+            "pluginVersion": "8.1.2",
             "targets": [{
                 "application": {
-                    "filter": "interface"
+                    "filter": "status"
                 },
                 "functions": [{
+                    "$$hashKey": "object:132",
                     "def": {
                         "category": "Alias",
                         "defaultParams": [
@@ -520,8 +720,7 @@
                         "/Interface Status - (.*)/",
                         "$1"
                     ],
-                    "text": "replaceAlias(/Interface Status - (.*)/, $1)",
-                    "$$hashKey": "object:57"
+                    "text": "replaceAlias(/Interface Status - (.*)/, $1)"
                 }],
                 "group": {
                     "filter": "OLT INTELBRAS GPON"
@@ -530,7 +729,7 @@
                     "filter": "$OLT"
                 },
                 "item": {
-                    "filter": "/Interface Status - eth/"
+                    "filter": "/ eth/"
                 },
                 "options": {
                     "disableDataAlignment": false,
@@ -592,7 +791,7 @@
                                 "value": 1
                             },
                             {
-                                "color": "#EAB839",
+                                "color": "yellow",
                                 "value": 2
                             }
                         ]
@@ -622,12 +821,13 @@
                 "text": {},
                 "textMode": "name"
             },
-            "pluginVersion": "8.0.6",
+            "pluginVersion": "8.1.2",
             "targets": [{
                 "application": {
-                    "filter": "interface"
+                    "filter": "status"
                 },
                 "functions": [{
+                    "$$hashKey": "object:159",
                     "def": {
                         "category": "Alias",
                         "defaultParams": [
@@ -649,8 +849,7 @@
                         "/Interface Status - (.*)/",
                         "$1"
                     ],
-                    "text": "replaceAlias(/Interface Status - (.*)/, $1)",
-                    "$$hashKey": "object:134"
+                    "text": "replaceAlias(/Interface Status - (.*)/, $1)"
                 }],
                 "group": {
                     "filter": "OLT INTELBRAS GPON"
@@ -659,7 +858,7 @@
                     "filter": "$OLT"
                 },
                 "item": {
-                    "filter": "/Interface Status - xeth/"
+                    "filter": "/xeth/"
                 },
                 "options": {
                     "disableDataAlignment": false,
@@ -697,9 +896,9 @@
                     "color": {
                         "mode": "thresholds"
                     },
-                    "displayName": "DOWN",
+                    "displayName": "DOWN >",
                     "mappings": [],
-                    "noValue": "DOWN",
+                    "noValue": "DOWN >",
                     "thresholds": {
                         "mode": "absolute",
                         "steps": [{
@@ -732,7 +931,7 @@
                 "text": {},
                 "textMode": "value"
             },
-            "pluginVersion": "8.0.6",
+            "pluginVersion": "8.1.2",
             "targets": [{
                 "application": {
                     "filter": ""
@@ -789,7 +988,7 @@
                 "content": "",
                 "mode": "markdown"
             },
-            "pluginVersion": "8.0.6",
+            "pluginVersion": "8.1.2",
             "targets": [{
                 "application": {
                     "filter": ""
@@ -888,7 +1087,7 @@
                 "text": {},
                 "textMode": "name"
             },
-            "pluginVersion": "8.0.6",
+            "pluginVersion": "8.1.2",
             "targets": [{
                 "application": {
                     "filter": "interface"
@@ -1018,10 +1217,10 @@
                 "text": {},
                 "textMode": "value"
             },
-            "pluginVersion": "8.0.6",
+            "pluginVersion": "8.1.2",
             "targets": [{
                 "application": {
-                    "filter": "interface"
+                    "filter": "status"
                 },
                 "functions": [],
                 "group": {
@@ -1031,7 +1230,7 @@
                     "filter": "$OLT"
                 },
                 "item": {
-                    "filter": "/Interface Status - gpon/"
+                    "filter": "/gpon/"
                 },
                 "options": {
                     "disableDataAlignment": false,
@@ -1072,7 +1271,16 @@
                         "mode": "thresholds"
                     },
                     "decimals": 0,
-                    "mappings": [],
+                    "mappings": [{
+                        "options": {
+                            "131": {
+                                "color": "yellow",
+                                "index": 0,
+                                "text": "0"
+                            }
+                        },
+                        "type": "value"
+                    }],
                     "noValue": "0",
                     "thresholds": {
                         "mode": "absolute",
@@ -1107,10 +1315,10 @@
                 "text": {},
                 "textMode": "value"
             },
-            "pluginVersion": "8.0.6",
+            "pluginVersion": "8.1.2",
             "targets": [{
                 "application": {
-                    "filter": "interface"
+                    "filter": "bias"
                 },
                 "functions": [],
                 "group": {
@@ -1120,7 +1328,7 @@
                     "filter": "$OLT"
                 },
                 "item": {
-                    "filter": "/Interface SFP Tx Bias/"
+                    "filter": "/.*/"
                 },
                 "options": {
                     "disableDataAlignment": false,
@@ -1149,7 +1357,7 @@
                     "minSeverity": 3
                 }
             }],
-            "title": "Current",
+            "title": "Tx Bias",
             "type": "stat"
         },
         {
@@ -1160,8 +1368,19 @@
                     "color": {
                         "mode": "thresholds"
                     },
-                    "decimals": 0,
-                    "mappings": [],
+                    "decimals": 2,
+                    "mappings": [{
+                        "options": {
+                            "from": 6.553,
+                            "result": {
+                                "color": "yellow",
+                                "index": 0,
+                                "text": "0"
+                            },
+                            "to": 7
+                        },
+                        "type": "range"
+                    }],
                     "noValue": "0",
                     "thresholds": {
                         "mode": "absolute",
@@ -1196,10 +1415,10 @@
                 "text": {},
                 "textMode": "value"
             },
-            "pluginVersion": "8.0.6",
+            "pluginVersion": "8.1.2",
             "targets": [{
                 "application": {
-                    "filter": "interface"
+                    "filter": "voltagem"
                 },
                 "functions": [],
                 "group": {
@@ -1209,7 +1428,7 @@
                     "filter": "$OLT"
                 },
                 "item": {
-                    "filter": "/Interface SFP Voltagem/"
+                    "filter": "/.*/"
                 },
                 "options": {
                     "disableDataAlignment": false,
@@ -1285,13 +1504,13 @@
                 "showUnfilled": true,
                 "text": {}
             },
-            "pluginVersion": "8.0.6",
+            "pluginVersion": "8.1.2",
             "targets": [{
                 "application": {
-                    "filter": "contador"
+                    "filter": "onu online por pon"
                 },
                 "functions": [{
-                    "$$hashKey": "object:84",
+                    "$$hashKey": "object:86",
                     "def": {
                         "category": "Alias",
                         "defaultParams": [],
@@ -1342,7 +1561,7 @@
                     "minSeverity": 3
                 }
             }],
-            "title": "Contagem de ONU's",
+            "title": "Onus Online",
             "type": "bargauge"
         },
         {
@@ -1352,10 +1571,19 @@
                     "color": {
                         "mode": "continuous-RdYlGr"
                     },
-                    "decimals": 0,
-                    "mappings": [],
-                    "max": -16,
-                    "min": -26,
+                    "decimals": 2,
+                    "mappings": [{
+                        "options": {
+                            "8.1": {
+                                "color": "yellow",
+                                "index": 0,
+                                "text": "-"
+                            }
+                        },
+                        "type": "value"
+                    }],
+                    "max": 9,
+                    "min": -11,
                     "noValue": "0",
                     "thresholds": {
                         "mode": "absolute",
@@ -1364,7 +1592,7 @@
                             "value": null
                         }]
                     },
-                    "unit": "celsius"
+                    "unit": "dBm"
                 },
                 "overrides": []
             },
@@ -1372,109 +1600,6 @@
                 "h": 9,
                 "w": 4,
                 "x": 12,
-                "y": 5
-            },
-            "id": 35,
-            "options": {
-                "displayMode": "gradient",
-                "orientation": "horizontal",
-                "reduceOptions": {
-                    "calcs": [
-                        "lastNotNull"
-                    ],
-                    "fields": "",
-                    "values": false
-                },
-                "showUnfilled": true,
-                "text": {}
-            },
-            "pluginVersion": "8.0.6",
-            "targets": [{
-                "application": {
-                    "filter": "interface"
-                },
-                "functions": [{
-                    "$$hashKey": "object:86",
-                    "def": {
-                        "category": "Alias",
-                        "defaultParams": [],
-                        "name": "setAlias",
-                        "params": [{
-                            "name": "alias",
-                            "type": "string"
-                        }]
-                    },
-                    "params": [
-                        " "
-                    ],
-                    "text": "setAlias( )"
-                }],
-                "group": {
-                    "filter": "OLT INTELBRAS GPON"
-                },
-                "host": {
-                    "filter": "$OLT"
-                },
-                "item": {
-                    "filter": "/Interface SFP Rx Power/"
-                },
-                "options": {
-                    "disableDataAlignment": false,
-                    "showDisabledItems": false,
-                    "skipEmptyValues": false,
-                    "useZabbixValueMapping": false
-                },
-                "proxy": {
-                    "filter": ""
-                },
-                "queryType": 0,
-                "refId": "A",
-                "resultFormat": "time_series",
-                "table": {
-                    "skipEmptyValues": false
-                },
-                "tags": {
-                    "filter": ""
-                },
-                "trigger": {
-                    "filter": ""
-                },
-                "triggers": {
-                    "acknowledged": 2,
-                    "count": true,
-                    "minSeverity": 3
-                }
-            }],
-            "title": "Rx Power",
-            "type": "bargauge"
-        },
-        {
-            "datasource": null,
-            "fieldConfig": {
-                "defaults": {
-                    "color": {
-                        "mode": "continuous-RdYlGr"
-                    },
-                    "decimals": 0,
-                    "mappings": [],
-                    "max": 9,
-                    "min": -10,
-                    "noValue": "0",
-                    "thresholds": {
-                        "mode": "absolute",
-                        "steps": [{
-                            "color": "green",
-                            "value": null
-                        }]
-                    },
-                    "unit": "none"
-                },
-                "overrides": []
-            },
-            "gridPos": {
-                "h": 9,
-                "w": 4,
-                "x": 16,
                 "y": 5
             },
             "id": 34,
@@ -1491,13 +1616,12 @@
                 "showUnfilled": true,
                 "text": {}
             },
-            "pluginVersion": "8.0.6",
+            "pluginVersion": "8.1.2",
             "targets": [{
                 "application": {
                     "filter": "interface"
                 },
                 "functions": [{
-                    "$$hashKey": "object:140",
                     "def": {
                         "category": "Alias",
                         "defaultParams": [],
@@ -1510,7 +1634,8 @@
                     "params": [
                         " "
                     ],
-                    "text": "setAlias( )"
+                    "text": "setAlias( )",
+                    "$$hashKey": "object:113"
                 }],
                 "group": {
                     "filter": "OLT INTELBRAS GPON"
@@ -1521,6 +1646,9 @@
                 "item": {
                     "filter": "/Interface SFP Tx Power/"
                 },
+                "itemTag": {
+                    "filter": "Application: interface"
+                },
                 "options": {
                     "disableDataAlignment": false,
                     "showDisabledItems": false,
@@ -1530,7 +1658,7 @@
                 "proxy": {
                     "filter": ""
                 },
-                "queryType": 0,
+                "queryType": "0",
                 "refId": "A",
                 "resultFormat": "time_series",
                 "table": {
@@ -1556,10 +1684,134 @@
             "fieldConfig": {
                 "defaults": {
                     "color": {
+                        "mode": "continuous-RdYlGr"
+                    },
+                    "decimals": 0,
+                    "mappings": [{
+                        "options": {
+                            "8.1": {
+                                "color": "yellow",
+                                "index": 0,
+                                "text": "-"
+                            }
+                        },
+                        "type": "value"
+                    }],
+                    "max": -14,
+                    "min": -30,
+                    "noValue": "0",
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [{
+                            "color": "green",
+                            "value": null
+                        }]
+                    },
+                    "unit": "dBm"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 9,
+                "w": 4,
+                "x": 16,
+                "y": 5
+            },
+            "id": 35,
+            "options": {
+                "displayMode": "gradient",
+                "orientation": "horizontal",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showUnfilled": true,
+                "text": {}
+            },
+            "pluginVersion": "8.1.2",
+            "targets": [{
+                "application": {
+                    "filter": "interface"
+                },
+                "functions": [{
+                    "def": {
+                        "category": "Alias",
+                        "defaultParams": [],
+                        "name": "setAlias",
+                        "params": [{
+                            "name": "alias",
+                            "type": "string"
+                        }]
+                    },
+                    "params": [
+                        " "
+                    ],
+                    "text": "setAlias( )",
+                    "$$hashKey": "object:140"
+                }],
+                "group": {
+                    "filter": "OLT INTELBRAS GPON"
+                },
+                "host": {
+                    "filter": "$OLT"
+                },
+                "item": {
+                    "filter": "/Interface SFP Rx Power/"
+                },
+                "itemTag": {
+                    "filter": "Application: interface"
+                },
+                "options": {
+                    "disableDataAlignment": false,
+                    "showDisabledItems": false,
+                    "skipEmptyValues": false,
+                    "useZabbixValueMapping": false
+                },
+                "proxy": {
+                    "filter": ""
+                },
+                "queryType": "0",
+                "refId": "A",
+                "resultFormat": "time_series",
+                "table": {
+                    "skipEmptyValues": false
+                },
+                "tags": {
+                    "filter": ""
+                },
+                "trigger": {
+                    "filter": ""
+                },
+                "triggers": {
+                    "acknowledged": 2,
+                    "count": true,
+                    "minSeverity": 3
+                }
+            }],
+            "title": "Rx Power",
+            "type": "bargauge"
+        },
+        {
+            "datasource": null,
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
                         "mode": "continuous-GrYlRd"
                     },
                     "decimals": 0,
-                    "mappings": [],
+                    "mappings": [{
+                        "options": {
+                            "255": {
+                                "color": "yellow",
+                                "index": 0,
+                                "text": "-"
+                            }
+                        },
+                        "type": "value"
+                    }],
                     "max": 70,
                     "min": 35,
                     "noValue": "0",
@@ -1594,14 +1846,13 @@
                 "showUnfilled": true,
                 "text": {}
             },
-            "pluginVersion": "8.0.6",
+            "pluginVersion": "8.1.2",
             "targets": [{
                 "application": {
                     "filter": "interface"
                 },
                 "functions": [{
-                    "$$hashKey": "object:33",
-                    "added": false,
+                    "$$hashKey": "object:248",
                     "def": {
                         "category": "Alias",
                         "defaultParams": [],
@@ -1654,240 +1905,6 @@
             }],
             "title": "Temperatura🔥",
             "type": "bargauge"
-        },
-        {
-            "datasource": null,
-            "description": "",
-            "fieldConfig": {
-                "defaults": {
-                    "color": {
-                        "mode": "palette-classic"
-                    },
-                    "custom": {
-                        "axisLabel": "",
-                        "axisPlacement": "auto",
-                        "barAlignment": 0,
-                        "drawStyle": "line",
-                        "fillOpacity": 0,
-                        "gradientMode": "none",
-                        "hideFrom": {
-                            "legend": false,
-                            "tooltip": false,
-                            "viz": false
-                        },
-                        "lineInterpolation": "stepBefore",
-                        "lineStyle": {
-                            "fill": "solid"
-                        },
-                        "lineWidth": 1,
-                        "pointSize": 5,
-                        "scaleDistribution": {
-                            "type": "linear"
-                        },
-                        "showPoints": "auto",
-                        "spanNulls": 3600000,
-                        "stacking": {
-                            "group": "A",
-                            "mode": "none"
-                        },
-                        "thresholdsStyle": {
-                            "mode": "off"
-                        }
-                    },
-                    "mappings": [],
-                    "min": 0,
-                    "thresholds": {
-                        "mode": "absolute",
-                        "steps": [{
-                                "color": "green",
-                                "value": null
-                            },
-                            {
-                                "color": "red",
-                                "value": 80
-                            }
-                        ]
-                    }
-                },
-                "overrides": []
-            },
-            "gridPos": {
-                "h": 12,
-                "w": 12,
-                "x": 0,
-                "y": 14
-            },
-            "id": 37,
-            "options": {
-                "legend": {
-                    "calcs": [],
-                    "displayMode": "table",
-                    "placement": "bottom"
-                },
-                "tooltip": {
-                    "mode": "single"
-                }
-            },
-            "targets": [{
-                "application": {
-                    "filter": "traffic out"
-                },
-                "functions": [],
-                "group": {
-                    "filter": "OLT INTELBRAS GPON"
-                },
-                "host": {
-                    "filter": "$OLT"
-                },
-                "item": {
-                    "filter": "/.*/"
-                },
-                "options": {
-                    "disableDataAlignment": false,
-                    "showDisabledItems": false,
-                    "skipEmptyValues": false,
-                    "useZabbixValueMapping": false
-                },
-                "proxy": {
-                    "filter": ""
-                },
-                "queryType": 0,
-                "refId": "A",
-                "resultFormat": "time_series",
-                "table": {
-                    "skipEmptyValues": false
-                },
-                "tags": {
-                    "filter": ""
-                },
-                "trigger": {
-                    "filter": ""
-                },
-                "triggers": {
-                    "acknowledged": 2,
-                    "count": true,
-                    "minSeverity": 3
-                }
-            }],
-            "title": "Interfaces Traffic Upload",
-            "type": "timeseries"
-        },
-        {
-            "datasource": null,
-            "description": "",
-            "fieldConfig": {
-                "defaults": {
-                    "color": {
-                        "mode": "palette-classic"
-                    },
-                    "custom": {
-                        "axisLabel": "",
-                        "axisPlacement": "auto",
-                        "barAlignment": 0,
-                        "drawStyle": "line",
-                        "fillOpacity": 0,
-                        "gradientMode": "none",
-                        "hideFrom": {
-                            "legend": false,
-                            "tooltip": false,
-                            "viz": false
-                        },
-                        "lineInterpolation": "stepBefore",
-                        "lineStyle": {
-                            "fill": "solid"
-                        },
-                        "lineWidth": 1,
-                        "pointSize": 5,
-                        "scaleDistribution": {
-                            "type": "linear"
-                        },
-                        "showPoints": "auto",
-                        "spanNulls": 3600000,
-                        "stacking": {
-                            "group": "A",
-                            "mode": "none"
-                        },
-                        "thresholdsStyle": {
-                            "mode": "off"
-                        }
-                    },
-                    "mappings": [],
-                    "min": 0,
-                    "thresholds": {
-                        "mode": "absolute",
-                        "steps": [{
-                                "color": "green",
-                                "value": null
-                            },
-                            {
-                                "color": "red",
-                                "value": 80
-                            }
-                        ]
-                    }
-                },
-                "overrides": []
-            },
-            "gridPos": {
-                "h": 12,
-                "w": 12,
-                "x": 12,
-                "y": 14
-            },
-            "id": 38,
-            "options": {
-                "legend": {
-                    "calcs": [],
-                    "displayMode": "table",
-                    "placement": "bottom"
-                },
-                "tooltip": {
-                    "mode": "single"
-                }
-            },
-            "targets": [{
-                "application": {
-                    "filter": "traffic in"
-                },
-                "functions": [],
-                "group": {
-                    "filter": "OLT INTELBRAS GPON"
-                },
-                "host": {
-                    "filter": "$OLT"
-                },
-                "item": {
-                    "filter": "/.*/"
-                },
-                "options": {
-                    "disableDataAlignment": false,
-                    "showDisabledItems": false,
-                    "skipEmptyValues": false,
-                    "useZabbixValueMapping": false
-                },
-                "proxy": {
-                    "filter": ""
-                },
-                "queryType": 0,
-                "refId": "A",
-                "resultFormat": "time_series",
-                "table": {
-                    "skipEmptyValues": false
-                },
-                "tags": {
-                    "filter": ""
-                },
-                "trigger": {
-                    "filter": ""
-                },
-                "triggers": {
-                    "acknowledged": 2,
-                    "count": true,
-                    "minSeverity": 3
-                }
-            }],
-            "title": "Interfaces Traffic Download",
-            "type": "timeseries"
         }
     ],
     "refresh": "30s",
@@ -1900,38 +1917,99 @@
     ],
     "templating": {
         "list": [{
-            "allValue": "1",
-            "current": {
-                "selected": false,
-                "text": "JADERLANDIA_OLT_01",
-                "value": "JADERLANDIA_OLT_01"
+                "allValue": "1",
+                "current": {
+                    "selected": true,
+                    "text": "NOVA_REP_OLT_02",
+                    "value": "NOVA_REP_OLT_02"
+                },
+                "datasource": null,
+                "definition": "Zabbix - host",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": "OLT",
+                "multi": false,
+                "name": "OLT",
+                "options": [],
+                "query": {
+                    "application": "",
+                    "group": "/OLT INTELBRAS GPON/",
+                    "host": "/.*/",
+                    "item": "",
+                    "queryType": "host"
+                },
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 1,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
             },
-            "datasource": null,
-            "definition": "Zabbix - host",
-            "description": null,
-            "error": null,
-            "hide": 0,
-            "includeAll": false,
-            "label": "OLT",
-            "multi": false,
-            "name": "OLT",
-            "options": [],
-            "query": {
-                "application": "",
-                "group": "/OLT INTELBRAS GPON/",
-                "host": "/.*/",
-                "item": "",
-                "queryType": "host"
+            {
+                "allValue": null,
+                "current": {
+                    "selected": false,
+                    "text": "1",
+                    "value": "1"
+                },
+                "datasource": null,
+                "definition": "Zabbix - item",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": "PON",
+                "multi": false,
+                "name": "PON",
+                "options": [],
+                "query": {
+                    "application": "interface",
+                    "group": "OLT INTELBRAS GPON",
+                    "host": "$OLT",
+                    "item": "/Interface Status - gpon/",
+                    "queryType": "item"
+                },
+                "refresh": 1,
+                "regex": "/Interface Status - gpon(.*)/",
+                "skipUrlSync": false,
+                "sort": 0,
+                "type": "query"
             },
-            "refresh": 1,
-            "regex": "",
-            "skipUrlSync": false,
-            "sort": 1,
-            "tagValuesQuery": "",
-            "tagsQuery": "",
-            "type": "query",
-            "useTags": false
-        }]
+            {
+                "allValue": null,
+                "current": {
+                    "selected": false,
+                    "text": "Interface Status - eth1",
+                    "value": "Interface Status - eth1"
+                },
+                "datasource": null,
+                "definition": "Zabbix - item",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": "Trafego da Porta",
+                "multi": false,
+                "name": "Trafego_da_Porta",
+                "options": [],
+                "query": {
+                    "application": "/.*/",
+                    "group": "/OLT INTELBRAS GPON/",
+                    "host": "$OLT",
+                    "item": "/Interface Status /",
+                    "queryType": "item"
+                },
+                "refresh": 1,
+                "regex": "/Interface Status/",
+                "skipUrlSync": false,
+                "sort": 0,
+                "type": "query"
+            }
+        ]
     },
     "time": {
         "from": "now-1h",
@@ -1952,5 +2030,5 @@
     "timezone": "",
     "title": "OLTS INTELBRAS GPON",
     "uid": "ct8KrtuGk",
-    "version": 183
+    "version": 248
 }
