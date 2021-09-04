@@ -28,7 +28,7 @@
 
 ## ZABBIX - TEMPLATE
 
-> Dividi o Template em três. Para usar conforme a necessidade.
+> Dividi o Template em quatro. Para usar conforme a necessidade.
 
 ![image](https://user-images.githubusercontent.com/23584038/128024800-857a459b-3e22-4ddd-a710-84cdd7b9e07d.png)
 
@@ -41,7 +41,7 @@ discovery[{#NAME},1.3.6.1.4.1.26138.1.1.1.1.1.2, {#STATUS},1.3.6.1.2.1.2.2.1.8]
 > Item discovery de ONU's. Busca a se as ONU's estão autorizadas e qual é a PON.
 
 ```js
-discovery[{#REG},1.3.6.1.4.1.26138.1.2.1.1.1.4, {#PON},1.3.6.1.4.1.26138.1.2.1.1.1.2]
+discovery[{#PON},1.3.6.1.4.1.26138.1.2.1.1.1.2, {#ACT},1.3.6.1.4.1.26138.1.2.1.1.1.5]
 ```
 
 > Pré-processamento
