@@ -46,7 +46,7 @@ discovery[{#PON},1.3.6.1.4.1.26138.1.2.1.1.1.2, {#ACT},1.3.6.1.4.1.26138.1.2.1.1
 
 > Pré-processamento
 
-![image](https://user-images.githubusercontent.com/23584038/128008078-2a86115e-44ba-4e8f-8213-b50a2963d803.png)
+![image](https://user-images.githubusercontent.com/23584038/132104637-16ef4efd-9108-498a-b0b9-34216717acb7.png)
 
 > Contador de ONU's registradas por PON.
 
