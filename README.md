@@ -65,3 +65,4 @@ $.[?(@.PON == '2' && @.REG == '1')].length()
 $.[?(@.PON == '3' && @.REG == '1')].length()
 ...
 ```
+![image](https://user-images.githubusercontent.com/23584038/132105595-b502266b-bc87-4e82-8e4a-683c823216a1.png)
