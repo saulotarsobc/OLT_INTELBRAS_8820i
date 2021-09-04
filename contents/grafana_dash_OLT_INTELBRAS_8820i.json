@@ -19,7 +19,7 @@
     "gnetId": null,
     "graphTooltip": 0,
     "id": 31,
-    "iteration": 1630781664547,
+    "iteration": 1630781664553,
     "links": [],
     "panels": [{
             "datasource": null,
@@ -100,7 +100,7 @@
                             }
                         ]
                     },
-                    "unit": "short"
+                    "unit": "dtdhms"
                 },
                 "overrides": []
             },
@@ -143,6 +143,9 @@
                 "item": {
                     "filter": "Uptime"
                 },
+                "itemTag": {
+                    "filter": "Application: geral"
+                },
                 "options": {
                     "disableDataAlignment": false,
                     "showDisabledItems": false,
@@ -152,7 +155,7 @@
                 "proxy": {
                     "filter": ""
                 },
-                "queryType": 0,
+                "queryType": "0",
                 "refId": "A",
                 "resultFormat": "time_series",
                 "table": {
@@ -1925,7 +1928,7 @@
         "list": [{
                 "allValue": "1",
                 "current": {
-                    "selected": false,
+                    "selected": true,
                     "text": "NOVA_REP_OLT_02",
                     "value": "NOVA_REP_OLT_02"
                 },
@@ -2036,5 +2039,5 @@
     "timezone": "",
     "title": "OLTS INTELBRAS GPON",
     "uid": "ct8KrtuGk",
-    "version": 250
+    "version": 251
 }
