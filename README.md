@@ -38,7 +38,7 @@
 discovery[{#NAME},1.3.6.1.4.1.26138.1.1.1.1.1.2, {#STATUS},1.3.6.1.2.1.2.2.1.8]
 ```
 
-> Item discovery de ONU's. Busca a se as ONU's estão autorizadas e qual é a PON.
+> Item discovery de ONU's. Busca se as ONU's estão autorizadas, online e qual é a PON.
 
 ```js
 discovery[{#PON},1.3.6.1.4.1.26138.1.2.1.1.1.2, {#ACT},1.3.6.1.4.1.26138.1.2.1.1.1.5]
