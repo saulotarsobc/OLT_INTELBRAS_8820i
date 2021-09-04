@@ -2,6 +2,10 @@
 
 ## 🚧 EM CONSTRUÇÃO
 
+## ATIVE AS NOTIFICAÇÕES PARA FICAR LIGADO NAS NOVIDADES
+
+![image](https://user-images.githubusercontent.com/23584038/132106564-72ab4986-3c8a-4074-9d0b-9bc77e5c9d80.png)
+
 ## ⚠️ versão de firmware da olt: 2.76 ⚠️
 
 ![image](https://user-images.githubusercontent.com/23584038/128234027-a7dff4e8-0073-4a24-a47e-f7d147b4a312.png)
