@@ -1,6 +1,6 @@
 # OLT GPON INTELBRAS 8820i
 
-## ⏳ Em contruçao... ⚡
+## 🚧 versão de firmware da olt: 2.76
 
 ![image](https://user-images.githubusercontent.com/23584038/128234027-a7dff4e8-0073-4a24-a47e-f7d147b4a312.png)
 
