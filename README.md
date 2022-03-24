@@ -33,9 +33,7 @@
 
 [Video demo](/contents/demo.mp4)
 
-[Template](./contents/OLT_INTELBRAS_8820i.xml)
-
-[Dashboard](contents/OLT_INTELBRAS_8820i.xml)
+[Dashboard](contents/grafana_dash_OLT_INTELBRAS_8820i.json)
 
 ## ZABBIX - TEMPLATE
 
