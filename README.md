@@ -43,17 +43,17 @@
 
 ## ZABBIX - TEMPLATE
 
-> Dividi o Template em quatro. Para usar conforme a necessidade.
+> Dividi o Template em quatro. Para usar conforme a necessidade
 
 ![image](https://user-images.githubusercontent.com/23584038/132104647-9a10ebe3-7e61-4314-ad9b-a80b87942411.png)
 
-> O descoberta para analise de trafego filtra apenas as interfaces com status UP.
+> O descoberta para analise de trafego filtra apenas as interfaces com status UP
 
 ```js
 discovery[{#NAME},1.3.6.1.4.1.26138.1.1.1.1.1.2, {#STATUS},1.3.6.1.2.1.2.2.1.8]
 ```
 
-> Item discovery de ONU's. Busca se as ONU's estão autorizadas, online e qual é a PON.
+> Item discovery de ONU's. Busca se as ONU's estão autorizadas, online e qual é a PON
 
 ```js
 discovery[{#PON},1.3.6.1.4.1.26138.1.2.1.1.1.2, {#ACT},1.3.6.1.4.1.26138.1.2.1.1.1.5, {#REG}, 1.3.6.1.4.1.26138.1.2.1.1.1.4]
@@ -70,9 +70,10 @@ systemStatusSensor1Temperature 1.3.6.1.4.1.26138.1.5.1.1.0 (°C)
 systemStatusSensor2Temperature 1.3.6.1.4.1.26138.1.5.1.2.0 (°C)
 ```
 
-> Contador de ONU's Provisionadas por PON.
+> Contador de ONU's Provisionadas por PON
 
 ```js
+TOTAL REGISTRADAS PON X
 1.3.6.1.4.1.26138.1.4.1.1.1.56.9 = reg.pon1
 1.3.6.1.4.1.26138.1.4.1.1.1.56.10 = reg.pon2
 1.3.6.1.4.1.26138.1.4.1.1.1.56.11 = reg.pon3
@@ -83,9 +84,10 @@ systemStatusSensor2Temperature 1.3.6.1.4.1.26138.1.5.1.2.0 (°C)
 1.3.6.1.4.1.26138.1.4.1.1.1.56.16 = reg.pon8
 ```
 
-> Contador de ONU's Ativas por PON.
+> Contador de ONU's Ativas por PON
 
 ```js
+TOTAL ATIVAS PON X
 1.3.6.1.4.1.26138.1.4.1.1.1.55.9 = act.pon1
 1.3.6.1.4.1.26138.1.4.1.1.1.55.10 = act.pon2
 1.3.6.1.4.1.26138.1.4.1.1.1.55.11 = act.pon3
@@ -100,14 +102,15 @@ systemStatusSensor2Temperature 1.3.6.1.4.1.26138.1.5.1.2.0 (°C)
 > Contador de ONU's Offline por PON. (Item calculado)
 
 ```js
-onus.off.pon1 = last("reg.pon1") - last("act.pon1")
-onus.off.pon2 = last("reg.pon2") - last("act.pon2")
-onus.off.pon3 = last("reg.pon3") - last("act.pon3")
-onus.off.pon4 = last("reg.pon4") - last("act.pon4")
-onus.off.pon5 = last("reg.pon5") - last("act.pon5")
-onus.off.pon6 = last("reg.pon6") - last("act.pon6")
-onus.off.pon7 = last("reg.pon7") - last("act.pon7")
-onus.off.pon8 = last("reg.pon8") - last("act.pon8")
+TOTAL INATIVAS PON X
+onus.inac.pon1 = last("reg.pon1") - last("act.pon1")
+onus.inac.pon2 = last("reg.pon2") - last("act.pon2")
+onus.inac.pon3 = last("reg.pon3") - last("act.pon3")
+onus.inac.pon4 = last("reg.pon4") - last("act.pon4")
+onus.inac.pon5 = last("reg.pon5") - last("act.pon5")
+onus.inac.pon6 = last("reg.pon6") - last("act.pon6")
+onus.inac.pon7 = last("reg.pon7") - last("act.pon7")
+onus.inac.pon8 = last("reg.pon8") - last("act.pon8")
 ```
 
 ![image](https://user-images.githubusercontent.com/23584038/132105625-24060a34-e00d-4880-8bc3-02b6eeb9cdd4.png)
