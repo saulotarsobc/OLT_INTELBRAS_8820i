@@ -133,28 +133,8 @@ act[pon8]
 ```js
 TOTAL INATIVAS PON X
 onus.inac.pon1
-last("reg.pon1")-last("act.pon1")
+last("reg.[pon1]")-last("act.pon1")
 
-onus.inac.pon2
-last("reg.pon2")-last("act.pon2")
-
-onus.inac.pon3
-last("reg.pon3")-last("act.pon3")
-
-onus.inac.pon4
-last("reg.pon4")-last("act.pon4")
-
-onus.inac.pon5
-last("reg.pon5")-last("act.pon5")
-
-onus.inac.pon6
-last("reg.pon6")-last("act.pon6")
-
-onus.inac.pon7
-last("reg.pon7")-last("act.pon7")
-
-onus.inac.pon8
-last("reg.pon8")-last("act.pon8")
 ```
 
 ![image](https://user-images.githubusercontent.com/23584038/132105625-24060a34-e00d-4880-8bc3-02b6eeb9cdd4.png)
