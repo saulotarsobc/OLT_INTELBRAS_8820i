@@ -10,7 +10,12 @@
 
 ![image](https://user-images.githubusercontent.com/23584038/128234027-a7dff4e8-0073-4a24-a47e-f7d147b4a312.png)
 
-## O que vai encontrar nesse template?
+## Zabbix Templates
+
+[Zabbix 5.0](contents/OLT_INTELBRAS_8820i_ONUs%20zabbix%205_0.xml)
+[Zabbix 5.4](contents/OLT_INTELBRAS_8820i_ONUs%20zabbix%205_4.xml)
+
+## O que vai encontrar nesses templates?
 
 - SISTEMA
   - UPTIME
