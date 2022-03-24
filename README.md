@@ -93,7 +93,14 @@ discovery[{#PON},1.3.6.1.4.1.26138.1.2.1.1.1.2, {#ACT},1.3.6.1.4.1.26138.1.2.1.1
 > Contador de ONU's Offline por PON. (Item calculado)
 
 ```js
-reg.pon1 - act.pon1
+onus.off.pon1 = last("reg.pon1")/last("act.pon1")
+onus.off.pon2 = last("reg.pon2")/last("act.pon2")
+onus.off.pon3 = last("reg.pon3")/last("act.pon3")
+onus.off.pon4 = last("reg.pon4")/last("act.pon4")
+onus.off.pon5 = last("reg.pon5")/last("act.pon5")
+onus.off.pon6 = last("reg.pon6")/last("act.pon6")
+onus.off.pon7 = last("reg.pon7")/last("act.pon7")
+onus.off.pon8 = last("reg.pon8")/last("act.pon8")
 ...
 ```
 
