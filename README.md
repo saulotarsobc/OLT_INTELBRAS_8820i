@@ -100,14 +100,14 @@ systemStatusSensor2Temperature 1.3.6.1.4.1.26138.1.5.1.2.0 (°C)
 > Contador de ONU's Offline por PON. (Item calculado)
 
 ```js
-onus.off.pon1 = last("reg.pon1")/last("act.pon1")
-onus.off.pon2 = last("reg.pon2")/last("act.pon2")
-onus.off.pon3 = last("reg.pon3")/last("act.pon3")
-onus.off.pon4 = last("reg.pon4")/last("act.pon4")
-onus.off.pon5 = last("reg.pon5")/last("act.pon5")
-onus.off.pon6 = last("reg.pon6")/last("act.pon6")
-onus.off.pon7 = last("reg.pon7")/last("act.pon7")
-onus.off.pon8 = last("reg.pon8")/last("act.pon8")
+onus.off.pon1 = last("reg.pon1") - last("act.pon1")
+onus.off.pon2 = last("reg.pon2") - last("act.pon2")
+onus.off.pon3 = last("reg.pon3") - last("act.pon3")
+onus.off.pon4 = last("reg.pon4") - last("act.pon4")
+onus.off.pon5 = last("reg.pon5") - last("act.pon5")
+onus.off.pon6 = last("reg.pon6") - last("act.pon6")
+onus.off.pon7 = last("reg.pon7") - last("act.pon7")
+onus.off.pon8 = last("reg.pon8") - last("act.pon8")
 ```
 
 ![image](https://user-images.githubusercontent.com/23584038/132105625-24060a34-e00d-4880-8bc3-02b6eeb9cdd4.png)
