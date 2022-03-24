@@ -1,12 +1,12 @@
 # OLT GPON INTELBRAS 8820i
 
-## 🚧 EM CONSTRUÇÃO
+## 🚧 Atualizando para a versão de firmware 2.81
 
 ## ATIVE AS NOTIFICAÇÕES PARA FICAR LIGADO NAS NOVIDADES
 
 ![image](https://user-images.githubusercontent.com/23584038/132106564-72ab4986-3c8a-4074-9d0b-9bc77e5c9d80.png)
 
-## ⚠️ versão de firmware da olt: 2.76 ⚠️
+## ⚠️ versão de firmware da olt: 2.81 ⚠️
 
 ![image](https://user-images.githubusercontent.com/23584038/128234027-a7dff4e8-0073-4a24-a47e-f7d147b4a312.png)
 
@@ -54,21 +54,32 @@ discovery[{#PON},1.3.6.1.4.1.26138.1.2.1.1.1.2, {#ACT},1.3.6.1.4.1.26138.1.2.1.1
 
 ![image](https://user-images.githubusercontent.com/23584038/132104637-16ef4efd-9108-498a-b0b9-34216717acb7.png)
 
-> Contador de ONU's Online por PON.
-
-```js
-$.[?(@.PON == '1' && @.ACT == '1')].length()
-$.[?(@.PON == '2' && @.ACT == '1')].length()
-$.[?(@.PON == '3' && @.ACT == '1')].length()
-...
-```
 
 > Contador de ONU's Provisionadas por PON.
 
 ```js
-$.[?(@.PON == '1' && @.REG == '1')].length()
-$.[?(@.PON == '2' && @.REG == '1')].length()
-$.[?(@.PON == '3' && @.REG == '1')].length()
+1.3.6.1.4.1.26138.1.4.1.1.1.56.9 = PON1
+1.3.6.1.4.1.26138.1.4.1.1.1.56.10 = PON2
+1.3.6.1.4.1.26138.1.4.1.1.1.56.11 = PON3
+1.3.6.1.4.1.26138.1.4.1.1.1.56.12 = PON4
+1.3.6.1.4.1.26138.1.4.1.1.1.56.13 = PON5
+1.3.6.1.4.1.26138.1.4.1.1.1.56.14 = PON6
+1.3.6.1.4.1.26138.1.4.1.1.1.56.15 = PON7
+1.3.6.1.4.1.26138.1.4.1.1.1.56.16 = PON8
+```
+
+> Contador de ONU's Ativas por PON.
+
+```js
+1.3.6.1.4.1.26138.1.4.1.1.1.55.9 = PON1
+1.3.6.1.4.1.26138.1.4.1.1.1.55.10 = PON2
+1.3.6.1.4.1.26138.1.4.1.1.1.55.11 = PON3
+1.3.6.1.4.1.26138.1.4.1.1.1.55.12 = PON4
+1.3.6.1.4.1.26138.1.4.1.1.1.55.13 = PON5
+1.3.6.1.4.1.26138.1.4.1.1.1.55.14 = PON6
+1.3.6.1.4.1.26138.1.4.1.1.1.55.15 = PON7
+1.3.6.1.4.1.26138.1.4.1.1.1.55.16 = PON8
 ...
 ```
+
 ![image](https://user-images.githubusercontent.com/23584038/132105625-24060a34-e00d-4880-8bc3-02b6eeb9cdd4.png)
