@@ -8,6 +8,10 @@
 
 ## ⚠️ versão de firmware da olt: 2.81 ⚠️
 
+## Apoio
+
+[Zabbix Documentation 5.4 - Itens calculados](https://www.zabbix.com/documentation/5.4/pt/manual/config/items/itemtypes/calculated)
+
 ![image](https://user-images.githubusercontent.com/23584038/128234027-a7dff4e8-0073-4a24-a47e-f7d147b4a312.png)
 
 [Dashboard](contents/grafana_dash_OLT_INTELBRAS_8820i.json)
