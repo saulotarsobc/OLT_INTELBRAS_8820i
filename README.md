@@ -73,28 +73,28 @@ systemStatusSensor2Temperature 1.3.6.1.4.1.26138.1.5.1.2.0 (°C)
 ```js
 TOTAL REGISTRADAS PON X
 
-reg[pon1]
+reg.pon1
 1.3.6.1.4.1.26138.1.4.1.1.1.56.9
 
-reg[pon2]
+reg.pon2
 1.3.6.1.4.1.26138.1.4.1.1.1.56.10
 
-reg[pon3]
+reg.pon3
 1.3.6.1.4.1.26138.1.4.1.1.1.56.11
 
-reg[pon4]
+reg.pon4
 1.3.6.1.4.1.26138.1.4.1.1.1.56.12
 
-reg[pon5]
+reg.pon5
 1.3.6.1.4.1.26138.1.4.1.1.1.56.13
 
-reg[pon6]
+reg.pon6
 1.3.6.1.4.1.26138.1.4.1.1.1.56.14
 
-reg[pon7]
+reg.pon7
 1.3.6.1.4.1.26138.1.4.1.1.1.56.15
 
-reg[pon8]
+reg.pon8
 1.3.6.1.4.1.26138.1.4.1.1.1.56.16
 ```
 
@@ -103,38 +103,42 @@ reg[pon8]
 ```js
 TOTAL ATIVAS PON X
 
-act[pon1]
+act.pon1
 1.3.6.1.4.1.26138.1.4.1.1.1.55.9
 
-act[pon2]
+act.pon2
 1.3.6.1.4.1.26138.1.4.1.1.1.55.10
 
-act[pon3]
+act.pon3
 1.3.6.1.4.1.26138.1.4.1.1.1.55.11
 
-act[pon4]
+act.pon4
 1.3.6.1.4.1.26138.1.4.1.1.1.55.12
 
-act[pon5]
+act.pon5
 1.3.6.1.4.1.26138.1.4.1.1.1.55.13
 
-act[pon6]
+act.pon6
 1.3.6.1.4.1.26138.1.4.1.1.1.55.14
 
-act[pon7]
+act.pon7
 1.3.6.1.4.1.26138.1.4.1.1.1.55.15
 
-act[pon8]
+act.pon8
 1.3.6.1.4.1.26138.1.4.1.1.1.55.16
 ```
 
 > Contador de ONU's Offline por PON. (Item calculado)
 
-```js
+```sh
 TOTAL INATIVAS PON X
 onus.inac.pon1
-last("reg.[pon1]")-last("act.pon1")
+last(//reg.pon1)-last(//act.pon1)
 
+onus.inac.pon2
+last(//reg.pon2)-last(//act.pon2)
+
+...
 ```
 
 ![image](https://user-images.githubusercontent.com/23584038/132105625-24060a34-e00d-4880-8bc3-02b6eeb9cdd4.png)

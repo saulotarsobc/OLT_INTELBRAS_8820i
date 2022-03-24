@@ -1,0 +1,803 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>5.4</version>
+    <date>2022-03-24T20:14:00Z</date>
+    <groups>
+        <group>
+            <uuid>983da8dcf932464d929c287ff2f092fd</uuid>
+            <name>OLT INTELBRAS GPON</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <uuid>f492c5fdc3284550b864cea6b4f2afd7</uuid>
+            <template>SC - OLT GPON INTELBRAS 8820i - contator</template>
+            <name>SC - OLT GPON INTELBRAS 8820i - contator</name>
+            <groups>
+                <group>
+                    <name>OLT INTELBRAS GPON</name>
+                </group>
+            </groups>
+            <items>
+                <item>
+                    <uuid>5d7bbcae8940430186b4e1a1614e45b4</uuid>
+                    <name>TOTAL ATIVAS PON 1</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.26138.1.4.1.1.1.55.9</snmp_oid>
+                    <key>act.pon1</key>
+                    <history>60d</history>
+                    <trends>120d</trends>
+                    <preprocessing>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <parameters>
+                                <parameter>600</parameter>
+                            </parameters>
+                        </step>
+                    </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>contador</tag>
+                            <value>total ativas</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>aa52bb8282314f9ea5eefda5840c906b</uuid>
+                    <name>TOTAL ATIVAS PON 2</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.26138.1.4.1.1.1.55.10</snmp_oid>
+                    <key>act.pon2</key>
+                    <history>60d</history>
+                    <trends>120d</trends>
+                    <preprocessing>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <parameters>
+                                <parameter>600</parameter>
+                            </parameters>
+                        </step>
+                    </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>contador</tag>
+                            <value>total ativas</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>05018e033ce24ca297cfdc4f4b69eb25</uuid>
+                    <name>TOTAL ATIVAS PON 3</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.26138.1.4.1.1.1.55.11</snmp_oid>
+                    <key>act.pon3</key>
+                    <history>60d</history>
+                    <trends>120d</trends>
+                    <preprocessing>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <parameters>
+                                <parameter>600</parameter>
+                            </parameters>
+                        </step>
+                    </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>contador</tag>
+                            <value>total ativas</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>01b0cc233c474940b090c82b2419f803</uuid>
+                    <name>TOTAL ATIVAS PON 4</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.26138.1.4.1.1.1.55.12</snmp_oid>
+                    <key>act.pon4</key>
+                    <history>60d</history>
+                    <trends>120d</trends>
+                    <preprocessing>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <parameters>
+                                <parameter>600</parameter>
+                            </parameters>
+                        </step>
+                    </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>contador</tag>
+                            <value>total ativas</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>4bf8467f82434168996393a3f502928f</uuid>
+                    <name>TOTAL ATIVAS PON 5</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.26138.1.4.1.1.1.55.13</snmp_oid>
+                    <key>act.pon5</key>
+                    <history>60d</history>
+                    <trends>120d</trends>
+                    <preprocessing>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <parameters>
+                                <parameter>600</parameter>
+                            </parameters>
+                        </step>
+                    </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>contador</tag>
+                            <value>total ativas</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>920cc9a839634aaa9c2c9f84c23f05bf</uuid>
+                    <name>TOTAL ATIVAS PON 6</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.26138.1.4.1.1.1.55.14</snmp_oid>
+                    <key>act.pon6</key>
+                    <history>60d</history>
+                    <trends>120d</trends>
+                    <preprocessing>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <parameters>
+                                <parameter>600</parameter>
+                            </parameters>
+                        </step>
+                    </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>contador</tag>
+                            <value>total ativas</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>4613436bf08a42428bf8cd9b48b81faf</uuid>
+                    <name>TOTAL ATIVAS PON 7</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.26138.1.4.1.1.1.55.15</snmp_oid>
+                    <key>act.pon7</key>
+                    <history>60d</history>
+                    <trends>120d</trends>
+                    <preprocessing>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <parameters>
+                                <parameter>600</parameter>
+                            </parameters>
+                        </step>
+                    </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>contador</tag>
+                            <value>total ativas</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>afe01f363b5f4fc4905664eeea0afdfb</uuid>
+                    <name>TOTAL ATIVAS PON 8</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.26138.1.4.1.1.1.55.16</snmp_oid>
+                    <key>act.pon8</key>
+                    <history>60d</history>
+                    <trends>120d</trends>
+                    <preprocessing>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <parameters>
+                                <parameter>600</parameter>
+                            </parameters>
+                        </step>
+                    </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>contador</tag>
+                            <value>total ativas</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>ac95abde968940e89c4b7dee9c52b796</uuid>
+                    <name>TOTAL INATIVAS PON 1</name>
+                    <type>CALCULATED</type>
+                    <key>onus.inac.pon1</key>
+                    <params>last(//reg.pon1)-last(//act.pon1)</params>
+                    <preprocessing>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <parameters>
+                                <parameter>600</parameter>
+                            </parameters>
+                        </step>
+                    </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>contador</tag>
+                            <value>total inativas</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>f75e3122397046ac98ed4b3333d3cf32</uuid>
+                    <name>TOTAL INATIVAS PON 2</name>
+                    <type>CALCULATED</type>
+                    <key>onus.inac.pon2</key>
+                    <params>last(//reg.pon2)-last(//act.pon2)</params>
+                    <preprocessing>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <parameters>
+                                <parameter>600</parameter>
+                            </parameters>
+                        </step>
+                    </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>contador</tag>
+                            <value>total inativas</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>233b9bdc10094975ac405f655358092f</uuid>
+                    <name>TOTAL INATIVAS PON 3</name>
+                    <type>CALCULATED</type>
+                    <key>onus.inac.pon3</key>
+                    <params>last(//reg.pon3)-last(//act.pon3)</params>
+                    <preprocessing>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <parameters>
+                                <parameter>600</parameter>
+                            </parameters>
+                        </step>
+                    </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>contador</tag>
+                            <value>total inativas</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>a14a8fa8a8984d618528c153136978d9</uuid>
+                    <name>TOTAL INATIVAS PON 4</name>
+                    <type>CALCULATED</type>
+                    <key>onus.inac.pon4</key>
+                    <params>last(//reg.pon4)-last(//act.pon4)</params>
+                    <preprocessing>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <parameters>
+                                <parameter>600</parameter>
+                            </parameters>
+                        </step>
+                    </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>contador</tag>
+                            <value>total inativas</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>2373f1ef24704a0f8bebe5508b81f873</uuid>
+                    <name>TOTAL INATIVAS PON 5</name>
+                    <type>CALCULATED</type>
+                    <key>onus.inac.pon5</key>
+                    <params>last(//reg.pon5)-last(//act.pon5)</params>
+                    <preprocessing>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <parameters>
+                                <parameter>600</parameter>
+                            </parameters>
+                        </step>
+                    </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>contador</tag>
+                            <value>total inativas</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>b921fd79c5fa42e5a25230e5dea92b9e</uuid>
+                    <name>TOTAL INATIVAS PON 6</name>
+                    <type>CALCULATED</type>
+                    <key>onus.inac.pon6</key>
+                    <params>last(//reg.pon6)-last(//act.pon6)</params>
+                    <preprocessing>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <parameters>
+                                <parameter>600</parameter>
+                            </parameters>
+                        </step>
+                    </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>contador</tag>
+                            <value>total inativas</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>e343d6ef63324b83a19e93cc4e7214bb</uuid>
+                    <name>TOTAL INATIVAS PON 7</name>
+                    <type>CALCULATED</type>
+                    <key>onus.inac.pon7</key>
+                    <params>last(//reg.pon7)-last(//act.pon7)</params>
+                    <preprocessing>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <parameters>
+                                <parameter>600</parameter>
+                            </parameters>
+                        </step>
+                    </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>contador</tag>
+                            <value>total inativas</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>a21e3af1452a45b6b7ef35155d44e5db</uuid>
+                    <name>TOTAL INATIVAS PON 8</name>
+                    <type>CALCULATED</type>
+                    <key>onus.inac.pon8</key>
+                    <params>last(//reg.pon8)-last(//act.pon8)</params>
+                    <preprocessing>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <parameters>
+                                <parameter>600</parameter>
+                            </parameters>
+                        </step>
+                    </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>contador</tag>
+                            <value>total inativas</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>67484c2ce4c74af6aef35d79196bea96</uuid>
+                    <name>TOTAL REGISTRADAS PON 1</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.26138.1.4.1.1.1.56.9</snmp_oid>
+                    <key>reg.pon1</key>
+                    <history>60d</history>
+                    <trends>120d</trends>
+                    <preprocessing>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <parameters>
+                                <parameter>600</parameter>
+                            </parameters>
+                        </step>
+                    </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>contador</tag>
+                            <value>total registradas</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>f27b9f374bc84cf381c62e2eee20c6ef</uuid>
+                    <name>TOTAL REGISTRADAS PON 2</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.26138.1.4.1.1.1.56.10</snmp_oid>
+                    <key>reg.pon2</key>
+                    <history>60d</history>
+                    <trends>120d</trends>
+                    <preprocessing>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <parameters>
+                                <parameter>600</parameter>
+                            </parameters>
+                        </step>
+                    </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>contador</tag>
+                            <value>total registradas</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>79597c0c82164a54bf2fd68b6449b95c</uuid>
+                    <name>TOTAL REGISTRADAS PON 3</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.26138.1.4.1.1.1.56.11</snmp_oid>
+                    <key>reg.pon3</key>
+                    <history>60d</history>
+                    <trends>120d</trends>
+                    <preprocessing>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <parameters>
+                                <parameter>600</parameter>
+                            </parameters>
+                        </step>
+                    </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>contador</tag>
+                            <value>total registradas</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>79361fb334664c7fa72fa182b445a7b6</uuid>
+                    <name>TOTAL REGISTRADAS PON 4</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.26138.1.4.1.1.1.56.12</snmp_oid>
+                    <key>reg.pon4</key>
+                    <history>60d</history>
+                    <trends>120d</trends>
+                    <preprocessing>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <parameters>
+                                <parameter>600</parameter>
+                            </parameters>
+                        </step>
+                    </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>contador</tag>
+                            <value>total registradas</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>3f46d1023a274720bce2f9e735bd1fb6</uuid>
+                    <name>TOTAL REGISTRADAS PON 5</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.26138.1.4.1.1.1.56.13</snmp_oid>
+                    <key>reg.pon5</key>
+                    <history>60d</history>
+                    <trends>120d</trends>
+                    <preprocessing>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <parameters>
+                                <parameter>600</parameter>
+                            </parameters>
+                        </step>
+                    </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>contador</tag>
+                            <value>total registradas</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>d86ca5366eda45129f5fe2c8e6020326</uuid>
+                    <name>TOTAL REGISTRADAS PON 6</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.26138.1.4.1.1.1.56.14</snmp_oid>
+                    <key>reg.pon6</key>
+                    <history>60d</history>
+                    <trends>120d</trends>
+                    <preprocessing>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <parameters>
+                                <parameter>600</parameter>
+                            </parameters>
+                        </step>
+                    </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>contador</tag>
+                            <value>total registradas</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>0a106a4afa3f44d09f95e5e672c4237a</uuid>
+                    <name>TOTAL REGISTRADAS PON 7</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.26138.1.4.1.1.1.56.15</snmp_oid>
+                    <key>reg.pon7</key>
+                    <history>60d</history>
+                    <trends>120d</trends>
+                    <preprocessing>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <parameters>
+                                <parameter>600</parameter>
+                            </parameters>
+                        </step>
+                    </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>contador</tag>
+                            <value>total registradas</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>2d6457406c824023b01277dacd2055f9</uuid>
+                    <name>TOTAL REGISTRADAS PON 8</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.26138.1.4.1.1.1.56.16</snmp_oid>
+                    <key>reg.pon8</key>
+                    <history>60d</history>
+                    <trends>120d</trends>
+                    <preprocessing>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <parameters>
+                                <parameter>600</parameter>
+                            </parameters>
+                        </step>
+                    </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>contador</tag>
+                            <value>total registradas</value>
+                        </tag>
+                    </tags>
+                </item>
+            </items>
+        </template>
+    </templates>
+    <graphs>
+        <graph>
+            <uuid>c6a346b5f42a48baaf0235e9cf9aa781</uuid>
+            <name>PON 1</name>
+            <graph_items>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <color>1A7C11</color>
+                    <item>
+                        <host>SC - OLT GPON INTELBRAS 8820i - contator</host>
+                        <key>act.pon1</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>2</sortorder>
+                    <color>F63100</color>
+                    <item>
+                        <host>SC - OLT GPON INTELBRAS 8820i - contator</host>
+                        <key>onus.inac.pon1</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>3</sortorder>
+                    <color>2774A4</color>
+                    <item>
+                        <host>SC - OLT GPON INTELBRAS 8820i - contator</host>
+                        <key>reg.pon1</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <uuid>d5b9fb3d952c40aabba30add395f080c</uuid>
+            <name>PON 2</name>
+            <graph_items>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <color>1A7C11</color>
+                    <item>
+                        <host>SC - OLT GPON INTELBRAS 8820i - contator</host>
+                        <key>act.pon1</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>2</sortorder>
+                    <color>F63100</color>
+                    <item>
+                        <host>SC - OLT GPON INTELBRAS 8820i - contator</host>
+                        <key>onus.inac.pon1</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>3</sortorder>
+                    <color>2774A4</color>
+                    <item>
+                        <host>SC - OLT GPON INTELBRAS 8820i - contator</host>
+                        <key>reg.pon1</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <uuid>280eab63b6144fb382670e7ad35025f1</uuid>
+            <name>PON 3</name>
+            <graph_items>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <color>1A7C11</color>
+                    <item>
+                        <host>SC - OLT GPON INTELBRAS 8820i - contator</host>
+                        <key>act.pon3</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>2</sortorder>
+                    <color>F63100</color>
+                    <item>
+                        <host>SC - OLT GPON INTELBRAS 8820i - contator</host>
+                        <key>onus.inac.pon1</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>3</sortorder>
+                    <color>2774A4</color>
+                    <item>
+                        <host>SC - OLT GPON INTELBRAS 8820i - contator</host>
+                        <key>reg.pon1</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <uuid>813774d7433f4937875641affbb49221</uuid>
+            <name>PON 4</name>
+            <graph_items>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <color>1A7C11</color>
+                    <item>
+                        <host>SC - OLT GPON INTELBRAS 8820i - contator</host>
+                        <key>act.pon4</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>2</sortorder>
+                    <color>F63100</color>
+                    <item>
+                        <host>SC - OLT GPON INTELBRAS 8820i - contator</host>
+                        <key>onus.inac.pon4</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>3</sortorder>
+                    <color>2774A4</color>
+                    <item>
+                        <host>SC - OLT GPON INTELBRAS 8820i - contator</host>
+                        <key>reg.pon4</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <uuid>a23344cf5730455996daf10a3634cdf1</uuid>
+            <name>PON 5</name>
+            <graph_items>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <color>1A7C11</color>
+                    <item>
+                        <host>SC - OLT GPON INTELBRAS 8820i - contator</host>
+                        <key>act.pon5</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>2</sortorder>
+                    <color>F63100</color>
+                    <item>
+                        <host>SC - OLT GPON INTELBRAS 8820i - contator</host>
+                        <key>onus.inac.pon5</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>3</sortorder>
+                    <color>2774A4</color>
+                    <item>
+                        <host>SC - OLT GPON INTELBRAS 8820i - contator</host>
+                        <key>reg.pon5</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <uuid>43fc16abe13d45f8827c7e8411eee6f2</uuid>
+            <name>PON 6</name>
+            <graph_items>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <color>1A7C11</color>
+                    <item>
+                        <host>SC - OLT GPON INTELBRAS 8820i - contator</host>
+                        <key>act.pon6</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>2</sortorder>
+                    <color>F63100</color>
+                    <item>
+                        <host>SC - OLT GPON INTELBRAS 8820i - contator</host>
+                        <key>onus.inac.pon6</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>3</sortorder>
+                    <color>2774A4</color>
+                    <item>
+                        <host>SC - OLT GPON INTELBRAS 8820i - contator</host>
+                        <key>reg.pon6</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <uuid>c3b9a240e942453dabe06547d9b6186f</uuid>
+            <name>PON 7</name>
+            <graph_items>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <color>1A7C11</color>
+                    <item>
+                        <host>SC - OLT GPON INTELBRAS 8820i - contator</host>
+                        <key>act.pon7</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>2</sortorder>
+                    <color>F63100</color>
+                    <item>
+                        <host>SC - OLT GPON INTELBRAS 8820i - contator</host>
+                        <key>onus.inac.pon7</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>3</sortorder>
+                    <color>2774A4</color>
+                    <item>
+                        <host>SC - OLT GPON INTELBRAS 8820i - contator</host>
+                        <key>reg.pon7</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <uuid>ce5197e345d34f478bf7f526903393cf</uuid>
+            <name>PON 8</name>
+            <graph_items>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <color>1A7C11</color>
+                    <item>
+                        <host>SC - OLT GPON INTELBRAS 8820i - contator</host>
+                        <key>act.pon8</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>2</sortorder>
+                    <color>F63100</color>
+                    <item>
+                        <host>SC - OLT GPON INTELBRAS 8820i - contator</host>
+                        <key>onus.inac.pon8</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>3</sortorder>
+                    <color>2774A4</color>
+                    <item>
+                        <host>SC - OLT GPON INTELBRAS 8820i - contator</host>
+                        <key>reg.pon8</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+    </graphs>
+</zabbix_export>
