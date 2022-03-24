@@ -96,7 +96,6 @@ TOTAL ATIVAS PON X
 1.3.6.1.4.1.26138.1.4.1.1.1.55.14 = act.pon6
 1.3.6.1.4.1.26138.1.4.1.1.1.55.15 = act.pon7
 1.3.6.1.4.1.26138.1.4.1.1.1.55.16 = act.pon8
-...
 ```
 
 > Contador de ONU's Offline por PON. (Item calculado)
