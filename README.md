@@ -13,6 +13,7 @@
 ## Zabbix Templates
 
 - [Zabbix 5.0](contents/OLT_INTELBRAS_8820i_ONUs%20zabbix%205_0.xml)
+
 - [Zabbix 5.4](contents/OLT_INTELBRAS_8820i_ONUs%20zabbix%205_4.xml)
 
 ## O que vai encontrar nesses templates?
@@ -58,10 +59,16 @@ discovery[{#NAME},1.3.6.1.4.1.26138.1.1.1.1.1.2, {#STATUS},1.3.6.1.2.1.2.2.1.8]
 discovery[{#PON},1.3.6.1.4.1.26138.1.2.1.1.1.2, {#ACT},1.3.6.1.4.1.26138.1.2.1.1.1.5, {#REG}, 1.3.6.1.4.1.26138.1.2.1.1.1.4]
 ```
 
-> Pré-processamento
+> Monitoramento geral
 
-![image](https://user-images.githubusercontent.com/23584038/132104637-16ef4efd-9108-498a-b0b9-34216717acb7.png)
-
+```js
+cpuUsage 1.3.6.1.4.1.2021.11.9.0 (%)
+memTotal 1.3.6.1.4.1.2021.4.5.0 (KB)
+memFree 1.3.6.1.4.1.2021.4.6.0 (KB)
+uptime 1.3.6.1.2.1.1.3.0 (uptime)
+systemStatusSensor1Temperature 1.3.6.1.4.1.26138.1.5.1.1.0 (°C)
+systemStatusSensor2Temperature 1.3.6.1.4.1.26138.1.5.1.2.0 (°C)
+```
 
 > Contador de ONU's Provisionadas por PON.
 
@@ -101,17 +108,6 @@ onus.off.pon5 = last("reg.pon5")/last("act.pon5")
 onus.off.pon6 = last("reg.pon6")/last("act.pon6")
 onus.off.pon7 = last("reg.pon7")/last("act.pon7")
 onus.off.pon8 = last("reg.pon8")/last("act.pon8")
-```
-
-> Monitoramento geral
-
-```js
-cpuUsage 1.3.6.1.4.1.2021.11.9.0 (%)
-memTotal 1.3.6.1.4.1.2021.4.5.0 (KB)
-memFree 1.3.6.1.4.1.2021.4.6.0 (KB)
-uptime 1.3.6.1.2.1.1.3.0 (uptime)
-systemStatusSensor1Temperature 1.3.6.1.4.1.26138.1.5.1.1.0 (°C)
-systemStatusSensor2Temperature 1.3.6.1.4.1.26138.1.5.1.2.0 (°C)
 ```
 
 ![image](https://user-images.githubusercontent.com/23584038/132105625-24060a34-e00d-4880-8bc3-02b6eeb9cdd4.png)
