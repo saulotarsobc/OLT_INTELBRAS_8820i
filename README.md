@@ -132,6 +132,7 @@ act.pon8
 
 ```sh
 TOTAL INATIVAS PON X
+
 onus.inac.pon1
 last(//reg.pon1)-last(//act.pon1)
 
